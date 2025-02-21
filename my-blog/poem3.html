@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Αβυσσος</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            text-align: center;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 80%;
+            margin: 0 auto;
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .poem {
+            font-size: 22px;
+            line-height: 1.1;
+            text-align: left;
+            max-width: 50%;
+            padding-right: 20px;
+        }
+
+        .poem-image {
+            position: absolute;
+            top: -20px;
+            right: 0;
+            max-width: none;
+        }
+
+        .poem-image img {
+            width: 600px; /
+            height: auto;
+            border-radius: 100px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-link {
+            color: #ff8c00;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        #comments {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        #commentBox {
+            width: 80%;
+            max-width: 500px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        #commentList {
+            list-style: none;
+            padding: 0;
+        }
+
+        #likeButton {
+            background-color: #ff8c00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #likeButton:hover {
+            background-color: #e07b00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Άβυσσος</h1>
+        <a href="poems.html" class="back-link">← Επιστροφή στα Ποιήματα</a>
+    </header>
+
+    <main class="container">
+        <div class="poem">
+            <p>
+                Περισσότερο μόνος αισθάνομαι όταν νιώθω πως συνυπάρχουμε<br>
+με τη βροχή που πέφτει,<br>
+με το ξεπέταγμα ενός πουλιού,<br>
+με την ιδέα ότι ήσουν<br>
+πίσω από το παράθυρο που δεν άνοιξα,<br>
+στο στενό που δεν μπήκα.<br>
+<br>
+Ίσως κάποτε να με άγγιξαν άθελα τα μαλλιά σου<br>
+σε ένα μπαράκι και δεν σε πρόσεξα.<br>
+<br>
+Ίσως μόλις να είχες φύγει από το κάθισμα που κάθισα,<br>
+από τη βρύση που ήπια νερό.<br>
+<br>
+Περισσότερο μόνος αισθάνομαι όταν νιώθω πως συνυπάρχουμε<br>
+με τη μαγεία του δειλινού,<br>
+με το φύσημα του ανέμου όταν παίρνει τα φύλλα<br>
+και τα ρίχνει και τα σκορπά,<br>
+όταν αυτά κιτρινίζουν και σιγά σιγά χάνονται<br>
+στην άβυσσο της ελπίδας<br>
+να ξαναγίνουν δέντρα μια μέρα,<br>
+να ξανάρθει αυτό το απαλό αεράκι να τα πάρει,<br>
+να πέσουν στο σβέρκο σου σαν περνάς<br>
+κι ας μην με αγγίξεις.<br>
+Μόνο να περνάς<br>
+από τις νότες των τραγουδιών,<br>
+από τις σταγόνες της βροχής,<br>
+από τα όνειρά μου.<br>
+
+
+
+
+            </p>
+        </div>
+        <div class="poem-image">
+            <img src="avisos.jpg" alt="Άβυσσος">
+        </div>
+    </main>
+
+    <section id="comments">
+        <h3>Σχόλια</h3>
+        <textarea id="commentBox" placeholder="Γράψε ένα σχόλιο..."></textarea>
+        <button onclick="addComment()">Υποβολή</button>
+        <ul id="commentList"></ul>
+    </section>
+
+    <button id="likeButton" onclick="addLike()">❤️ Μου αρέσει (<span id="likeCount">0</span>)</button>
+
+    <footer>
+        <a href="poems.html" class="back-link">← Επιστροφή στα Ποιήματα</a>
+    </footer>
+
+    <script>
+        let likeCount = 0;
+
+        function addLike() {
+            likeCount++;
+            document.getElementById('likeCount').innerText = likeCount;
+        }
+
+        function addComment() {
+            let commentBox = document.getElementById('commentBox');
+            let commentText = commentBox.value.trim();
+
+            if (commentText !== "") {
+                let commentList = document.getElementById('commentList');
+                let newComment = document.createElement('li');
+                newComment.innerText = commentText;
+                commentList.appendChild(newComment);
+                commentBox.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
+
+

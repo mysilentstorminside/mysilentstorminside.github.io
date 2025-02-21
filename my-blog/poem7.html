@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Το νήμα σου</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            text-align: center;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 80%;
+            margin: 0 auto;
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .poem {
+            font-size: 22px;
+            line-height: 1.1;
+            text-align: left;
+            max-width: 50%;
+            padding-right: 20px;
+        }
+
+        .poem-image {
+            position: absolute;
+            top: -20px;
+            right: 0;
+            max-width: none;
+        }
+
+        .poem-image img {
+            width: 600px; /
+            height: auto;
+            border-radius: 100px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-link {
+            color: #ff8c00;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        #comments {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        #commentBox {
+            width: 80%;
+            max-width: 500px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        #commentList {
+            list-style: none;
+            padding: 0;
+        }
+
+        #likeButton {
+            background-color: #ff8c00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #likeButton:hover {
+            background-color: #e07b00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Το νήμα σου</h1>
+        <a href="poems.html" class="back-link">← Επιστροφή στα Ποιήματα</a>
+    </header>
+
+    <main class="container">
+        <div class="poem">
+            <p>Οδηγώ τις σκέψεις μου στο μάταιο,<br>
+                για να τις ξεκουράσω.<br>
+                <br>
+                Μα για σένα ταξιδεύω ασταμάτητα,<br>
+                απροσδιόριστα σε ακολουθώ,<br>
+                σαν χαζεύεις τα απλωμένα στο σχοινί<br>
+                όνειρά σου.<br>
+                <br>
+                Σε ακούω να ερμηνεύεις τη σιωπή<br>
+                μες στον άνεμο.<br>
+                Σε νιώθω να ζωγραφίζεις την απουσία σου<br>
+                στην καρδιά μου.<br>
+                <br>
+                Απ’ όπου κι αν διαλέξεις να φύγεις,<br>
+                όλο και έρχεσαι,<br>
+                σαν ατελείωτο νήμα τυλιγμένο γύρω<br>
+                απ’ τη μοναξιά μου.<br>
+                
+ 
+
+
+  
+
+
+ 
+
+
+
+
+
+
+
+
+            </p>
+        </div>
+        <div class="poem-image">
+            <img src="poem7image.jpg" alt="Εφάννην μου">
+        </div>
+    </main>
+
+    <section id="comments">
+        <h3>Σχόλια</h3>
+        <textarea id="commentBox" placeholder="Γράψε ένα σχόλιο..."></textarea>
+        <button onclick="addComment()">Υποβολή</button>
+        <ul id="commentList"></ul>
+    </section>
+
+    <button id="likeButton" onclick="addLike()">❤️ Μου αρέσει (<span id="likeCount">0</span>)</button>
+
+    <footer>
+        <a href="poems.html" class="back-link">← Επιστροφή στα Ποιήματα</a>
+    </footer>
+
+    <script>
+        let likeCount = 0;
+
+        function addLike() {
+            likeCount++;
+            document.getElementById('likeCount').innerText = likeCount;
+        }
+
+        function addComment() {
+            let commentBox = document.getElementById('commentBox');
+            let commentText = commentBox.value.trim();
+
+            if (commentText !== "") {
+                let commentList = document.getElementById('commentList');
+                let newComment = document.createElement('li');
+                newComment.innerText = commentText;
+                commentList.appendChild(newComment);
+                commentBox.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
+
+

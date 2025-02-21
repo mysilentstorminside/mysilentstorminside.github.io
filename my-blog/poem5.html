@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ένα κομμάτι του Οκτώβρη μέσα μου</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            text-align: center;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 80%;
+            margin: 0 auto;
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .poem {
+            font-size: 22px;
+            line-height: 1.1;
+            text-align: left;
+            max-width: 50%;
+            padding-right: 20px;
+        }
+
+        .poem-image {
+            position: absolute;
+            top: -20px;
+            right: 0;
+            max-width: none;
+        }
+
+        .poem-image img {
+            width: 600px; /
+            height: auto;
+            border-radius: 100px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-link {
+            color: #ff8c00;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        #comments {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        #commentBox {
+            width: 80%;
+            max-width: 500px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        #commentList {
+            list-style: none;
+            padding: 0;
+        }
+
+        #likeButton {
+            background-color: #ff8c00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #likeButton:hover {
+            background-color: #e07b00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ένα κομμάτι του Οκτώβρη μέσα μου</h1>
+        <a href="poems.html" class="back-link">← Επιστροφή στα Ποιήματα</a>
+    </header>
+
+    <main class="container">
+        <div class="poem">
+            <p>
+                Σε γέννησε το πάθος μου<br>
+Σε έπλασαν οι κρύες νύχτες του χειμώνα,<br>
+σου έβαλε μιλιά η σιωπή του πλήθους<br>
+την ώρα που ούρλιαζε.<br>
+Σε παραπλάνησε η φαντασία μου.<br>
+<br>
+Σε μέρη ανύπαρκτα σου υποσχέθηκα να σε πάρω.<br>
+<br>
+Για πλώρη βάλαμε, εσύ και εγώ,<br>
+σαν χαμένοι σε έναν κόσμο που είναι ακίνητος<br>
+μα που αλλάζει μορφές.<br>
+<br>
+Σε μια θάλασσα γαλήνια δίχως τέλος,<br>
+κάτω από έναν απέραντο ουρανό<br>
+γεμάτο με άστρα, σε φίλησα.<br>
+Σαν προσκύνημα σε φυλάω μέσα μου,<br>
+σαν φυλακτό που μου το χάρισε η μοναξιά μου.<br>
+<br>
+Πόσο είναι που αγαπώ όταν έρχεται ο Οκτώβρης,<br>
+με όλα του τα χρώματα, με τη γλυκιά του παγωνιά,<br>
+σου αναθερμαίνει τα όνειρα,<br>
+σου καθαρίζει την ψυχή<br>
+από το κάψιμο του καλοκαιριού.<br>
+<br>
+Πόσο είναι που λατρεύω όταν τα φύλλα πέφτουν<br>
+και, δίχως να το θέλω, πέφτω και εγώ μαζί τους,<br>
+κι εκεί ακριβώς που βουλιάζω<br>
+σε βλέπω να κάθεσαι ακριβώς εκεί<br>
+που σκόνταψα όταν ήμουν μικρός,<br>
+σε έναν βράχο της θάλασσας,<br>
+να με περιμένεις δίχως να γερνάς,<br>
+δίχως να αλλάζει η λάμψη στα μάτια σου,<br>
+να κρατάς ένα κομμάτι του Οκτώβρη μέσα μου,<br>
+να μου καθαρίζεις την ψυχή<br>
+για να μην ξεχνώ ποιος είμαι.<br>
+
+
+
+
+
+
+            </p>
+        </div>
+        <div class="poem-image">
+            <img src="poem5image.jpg" alt="Ένα κομμάτι του Οκτώβρη μέσα μου">
+        </div>
+    </main>
+
+    <section id="comments">
+        <h3>Σχόλια</h3>
+        <textarea id="commentBox" placeholder="Γράψε ένα σχόλιο..."></textarea>
+        <button onclick="addComment()">Υποβολή</button>
+        <ul id="commentList"></ul>
+    </section>
+
+    <button id="likeButton" onclick="addLike()">❤️ Μου αρέσει (<span id="likeCount">0</span>)</button>
+
+    <footer>
+        <a href="poems.html" class="back-link">← Επιστροφή στα Ποιήματα</a>
+    </footer>
+
+    <script>
+        let likeCount = 0;
+
+        function addLike() {
+            likeCount++;
+            document.getElementById('likeCount').innerText = likeCount;
+        }
+
+        function addComment() {
+            let commentBox = document.getElementById('commentBox');
+            let commentText = commentBox.value.trim();
+
+            if (commentText !== "") {
+                let commentList = document.getElementById('commentList');
+                let newComment = document.createElement('li');
+                newComment.innerText = commentText;
+                commentList.appendChild(newComment);
+                commentBox.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
