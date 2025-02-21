@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ανάλαφρος</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            text-align: center;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 80%;
+            margin: 0 auto;
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .poem {
+            font-size: 22px;
+            line-height: 1.1;
+            text-align: left;
+            max-width: 50%;
+            padding-right: 20px;
+        }
+
+        .poem-image {
+            position: absolute;
+            top: -20px;
+            right: 0;
+            max-width: none;
+        }
+
+        .poem-image img {
+            width: 600px; /
+            height: auto;
+            border-radius: 100px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-link {
+            color: #ff8c00;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        #comments {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        #commentBox {
+            width: 80%;
+            max-width: 500px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        #commentList {
+            list-style: none;
+            padding: 0;
+        }
+
+        #likeButton {
+            background-color: #ff8c00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #likeButton:hover {
+            background-color: #e07b00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ανάλαφρος</h1>
+        <a href="poems.html" class="back-link">← Επιστροφή στα Ποιήματα</a>
+    </header>
+
+    <main class="container">
+        <div class="poem">
+            <p>
+                Ίσως να κρύβεσαι κάπου ανάμεσα στα σύννεφα και τη σκόνη,<br>
+του ονείρου, της αύρας, της καρδιάς μου το κτύπημα,<br>
+μιας ασήμαντης στιγμής που κιτρίνισε μέσα μου,<br>
+μα που μοσχοβολά άνοιξη.<br>
+<br>
+Στις μέρες και τα χρόνια που διαρκούν όσο έλπιζα,<br>
+πως είμαι στ’ άστρα κι εγώ μαζί σου,<br>
+ταξιδιώτης της απέραντης κατηφόρας,<br>
+χαζεύω κι εγώ το υπέροχο του διάβατος,<br>
+μα και τη θλίψη του ερωτευμένου —<br>
+<br>
+Σαν αεράκι με περιλούζεις,<br>
+σαν ανατρίχιασμα,<br>
+σαν νανουριστό.<br>
+Σε ακούω που όλο και έρχεσαι.<br>
+<br>
+Υπνοβατώ κι εγώ μαζί σου<br>
+σε όνειρα και λέξεις,<br>
+σε μύθους και ιστορίες,<br>
+σε βλέμματα και υπονοούμενα.<br>
+<br>
+Πάντοτε να ξυπνώ<br>
+στην ασήμαντη εκείνη στιγμή<br>
+που μοσχοβολά άνοιξη,<br>
+από το άρωμα της ιδέας ότι<br>
+κάπου κρύβεσαι, κάπου υπάρχεις —<br>
+είτε σαν υπόσταση, είτε σαν φραγμός,<br>
+είτε σαν ελπίδα, είτε σαν κουράγιο.<br>
+Σίγουρα υπάρχεις, σίγουρα κατρακυλάς κι εσύ<br>
+το κατήφορο.<br>
+<br>
+Ίσως και πάλι να είσαι εσύ που μπλέκεις<br>
+τη θάλασσα με τα χρώματα,<br>
+τη ματιά σου με τον έρωτα.<br>
+<br>
+Ίσως μια μέρα να γίνουμε ένα,<br>
+μετά το ανατρίχιασμα,<br>
+μετά το νανουριστό,<br>
+να κοιμηθούμε μαζί δίχως έννοιες,<br>
+ανάλαφροι σαν δύο πούπουλα<br>
+που μπλέχτηκαν μαζί,<br>
+σαν τα πήρε ο άνεμος<br>
+και έγιναν ένα.<br>
+
+
+            </p>
+        </div>
+        <div class="poem-image">
+            <img src="analafros.jpg" alt="Ανάλαφρος">
+        </div>
+    </main>
+
+    <section id="comments">
+        <h3>Σχόλια</h3>
+        <textarea id="commentBox" placeholder="Γράψε ένα σχόλιο..."></textarea>
+        <button onclick="addComment()">Υποβολή</button>
+        <ul id="commentList"></ul>
+    </section>
+
+    <button id="likeButton" onclick="addLike()">❤️ Μου αρέσει (<span id="likeCount">0</span>)</button>
+
+    <footer>
+        <a href="poems.html" class="back-link">← Επιστροφή στα Ποιήματα</a>
+    </footer>
+
+    <script>
+        let likeCount = 0;
+
+        function addLike() {
+            likeCount++;
+            document.getElementById('likeCount').innerText = likeCount;
+        }
+
+        function addComment() {
+            let commentBox = document.getElementById('commentBox');
+            let commentText = commentBox.value.trim();
+
+            if (commentText !== "") {
+                let commentList = document.getElementById('commentList');
+                let newComment = document.createElement('li');
+                newComment.innerText = commentText;
+                commentList.appendChild(newComment);
+                commentBox.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
+
+

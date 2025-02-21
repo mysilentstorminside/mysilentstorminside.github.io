@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Η κόρη της βροχής</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            text-align: center;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 80%;
+            margin: 0 auto;
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .poem {
+            font-size: 22px;
+            line-height: 1.1;
+            text-align: left;
+            max-width: 50%;
+            padding-right: 20px;
+        }
+
+        .poem-image {
+            position: absolute;
+            top: -20px;
+            right: 0;
+            max-width: none;
+        }
+
+        .poem-image img {
+            width: 800px; /
+            height: auto;
+            border-radius: 100px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-link {
+            color: #ff8c00;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        #comments {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        #commentBox {
+            width: 80%;
+            max-width: 500px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        #commentList {
+            list-style: none;
+            padding: 0;
+        }
+
+        #likeButton {
+            background-color: #ff8c00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #likeButton:hover {
+            background-color: #e07b00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Η κόρη της βροχής</h1>
+        <a href="poems.html" class="back-link">← Επιστροφή στα Ποιήματα</a>
+    </header>
+
+    <main class="container">
+        <div class="poem">
+            <p>
+                Μην με βρέξεις, κόρη της βροχής,<br>
+                με τα μεγάλα σου όνειρα,<br>
+                με τις ατέλειωτες μικρές σταγόνες σου·<br>
+                πλημμύρισαν τα στήθη σου.<br>
+                <br>
+                Μην με μπλέξεις στα βρεγμένα μαλλιά σου,<br>
+                που πανέμορφα γέρνουν στους ώμους σου.<br>
+                <br>
+                Μην με σαγηνεύσεις με τα μεγάλα σου μάτια<br>
+                για το πώς θα ξαναγίνεις σύννεφο,<br>
+                για το πώς θα με πάρεις ξανά μαζί σου.<br>
+                <br>
+                Έχεις έναν ρυθμό μαζί με τον άνεμο,<br>
+                σαν την πιο θλιμμένη, γλυκιά μελωδία:<br>
+                να έρχεσαι συνεχώς, μα να μην φτάνεις...<br>
+                <br>
+                Με συνεπαίρνεις με την εμμονή σου·<br>
+                να γυρίζω πίσω στα τεράστια χρόνια,<br>
+                όταν ήμουν μικρός,<br>
+                πώς μεγάλωσα και πώς μεγάλωσε κι η θλίψη<br>
+                μου μαζί σου.<br>
+                <br>
+                Τι να είμαστε, άραγε;<br>
+                Μικρές σταγόνες μιας καταιγίδας<br>
+                που, αργά ή γρήγορα, φτάνουμε στην απέραντη θάλασσα.<br>
+                Μήπως είμαστε τα μεγάλα, κουρασμένα κύματα<br>
+                που ο άνεμος τα νανουρίζει σε ένα ξωτικό λιμάνι,<br>
+                σε μια απόμακρη παραλία,<br>
+                σε μια μοναχική καρδιά;<br>
+                <br>
+                Ή μήπως είμαστε οι σταγόνες που μεγαλώνουμε τα δέντρα<br>
+                για να γείρουμε από κάτω μια μέρα, να κοιμηθούμε αιώνια;<br>
+                <br>
+                Σαν σε θίασο πορεύομαι κι εγώ μαζί σου,<br>
+                κόρη της βροχής...<br>
+                <br>
+                Και όπου με πάρεις,<br>
+                όταν με πάρεις,<br>
+                να μην βιαστείς.
+            </p>
+        </div>
+        <div class="poem-image">
+            <img src="daughtersrain.jpg" alt="Κόρη της βροχής">
+        </div>
+    </main>
+
+    <section id="comments">
+        <h3>Σχόλια</h3>
+        <textarea id="commentBox" placeholder="Γράψε ένα σχόλιο..."></textarea>
+        <button onclick="addComment()">Υποβολή</button>
+        <ul id="commentList"></ul>
+    </section>
+
+    <button id="likeButton" onclick="addLike()">❤️ Μου αρέσει (<span id="likeCount">0</span>)</button>
+
+    <footer>
+        <a href="poems.html" class="back-link">← Επιστροφή στα Ποιήματα</a>
+    </footer>
+
+    <script>
+        let likeCount = 0;
+
+        function addLike() {
+            likeCount++;
+            document.getElementById('likeCount').innerText = likeCount;
+        }
+
+        function addComment() {
+            let commentBox = document.getElementById('commentBox');
+            let commentText = commentBox.value.trim();
+
+            if (commentText !== "") {
+                let commentList = document.getElementById('commentList');
+                let newComment = document.createElement('li');
+                newComment.innerText = commentText;
+                commentList.appendChild(newComment);
+                commentBox.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
