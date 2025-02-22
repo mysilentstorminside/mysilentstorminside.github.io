@@ -36,11 +36,13 @@
             text-align: left;
             max-width: 50%;
             padding-right: 20px;
+            box-sizing: border-box; /* Ensures padding doesn’t push content outside */
         }
 
         .poem-image {
             position: relative;
             max-width: 50%;
+            box-sizing: border-box; /* Ensures image stays within bounds */
         }
 
         .poem-image img {
@@ -145,6 +147,8 @@
             .poem, .poem-image {
                 max-width: 100%;
                 padding-right: 0;
+                width: 100%; /* Forces full width to prevent overlap */
+                margin: 0; /* Removes any unintended margins */
             }
 
             .poem {
@@ -153,6 +157,7 @@
 
             .poem-image img {
                 border-radius: 50px;
+                max-width: 100%; /* Ensures image scales properly */
             }
 
             #comments, #commentBox {
@@ -190,6 +195,8 @@
             <img src="poem9image.jpg" alt="Όμορφο σκότος">
         </div>
     </main>
+
+    <button id="likeButton" onclick="toggleLike()">❤️ Μου αρέσει (<span id="likeCount">0</span>)</button>
 
     <section id="comments">
         <h3>Σχόλια</h3>
