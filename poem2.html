@@ -27,10 +27,11 @@
             margin: 0 auto;
             position: relative;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         .poem {
-            font-size: 22px;
+            font-size: 26px; /* Increased from 22px */
             line-height: 1.1;
             text-align: left;
             max-width: 50%;
@@ -38,14 +39,13 @@
         }
 
         .poem-image {
-            position: absolute;
-            top: -20px;
-            right: 0;
-            max-width: none;
+            position: relative; /* Changed from absolute for responsiveness */
+            max-width: 50%;
         }
 
         .poem-image img {
-            width: 600px; /
+            width: 100%;
+            max-width: 1000px; /* Increased from 600px */
             height: auto;
             border-radius: 100px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
@@ -62,34 +62,102 @@
 
         #comments {
             margin-top: 40px;
-            text-align: center;
+            text-align: left;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         #commentBox {
-            width: 80%;
+            width: 100%;
             max-width: 500px;
             padding: 10px;
             margin-top: 10px;
+            background-color: #333;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 4px;
         }
 
         #commentList {
             list-style: none;
             padding: 0;
+            margin-top: 20px;
+        }
+
+        #commentList li {
+            background-color: #2a2a2a;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comment-user {
+            font-weight: bold;
+            color: #ff8c00;
+            font-size: 14px;
+        }
+
+        .comment-time {
+            color: #888;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .comment-text {
+            margin-top: 5px;
+            font-size: 16px;
         }
 
         #likeButton {
-            background-color: #ff8c00;
+            background-color: transparent;
             color: white;
-            border: none;
-            padding: 10px 20px;
+            border: 1px solid #555;
+            padding: 5px 15px;
             margin-top: 20px;
-            font-size: 18px;
+            font-size: 16px;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
         }
 
         #likeButton:hover {
-            background-color: #e07b00;
+            background-color: #333;
+        }
+
+        #likeButton.liked {
+            color: #ff8c00;
+        }
+
+        #likeCount {
+            margin-left: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .poem, .poem-image {
+                max-width: 100%;
+                padding-right: 0;
+            }
+
+            .poem {
+                font-size: 20px; /* Adjusted for mobile */
+            }
+
+            .poem-image img {
+                border-radius: 50px;
+            }
+
+            #comments, #commentBox {
+                max-width: 90%;
+            }
         }
     </style>
 </head>
@@ -103,56 +171,56 @@
         <div class="poem">
             <p>
                 Ίσως να κρύβεσαι κάπου ανάμεσα στα σύννεφα και τη σκόνη,<br>
-του ονείρου, της αύρας, της καρδιάς μου το κτύπημα,<br>
-μιας ασήμαντης στιγμής που κιτρίνισε μέσα μου,<br>
-μα που μοσχοβολά άνοιξη.<br>
-<br>
-Στις μέρες και τα χρόνια που διαρκούν όσο έλπιζα,<br>
-πως είμαι στ’ άστρα κι εγώ μαζί σου,<br>
-ταξιδιώτης της απέραντης κατηφόρας,<br>
-χαζεύω κι εγώ το υπέροχο του διάβατος,<br>
-μα και τη θλίψη του ερωτευμένου —<br>
-<br>
-Σαν αεράκι με περιλούζεις,<br>
-σαν ανατρίχιασμα,<br>
-σαν νανουριστό.<br>
-Σε ακούω που όλο και έρχεσαι.<br>
-<br>
-Υπνοβατώ κι εγώ μαζί σου<br>
-σε όνειρα και λέξεις,<br>
-σε μύθους και ιστορίες,<br>
-σε βλέμματα και υπονοούμενα.<br>
-<br>
-Πάντοτε να ξυπνώ<br>
-στην ασήμαντη εκείνη στιγμή<br>
-που μοσχοβολά άνοιξη,<br>
-από το άρωμα της ιδέας ότι<br>
-κάπου κρύβεσαι, κάπου υπάρχεις —<br>
-είτε σαν υπόσταση, είτε σαν φραγμός,<br>
-είτε σαν ελπίδα, είτε σαν κουράγιο.<br>
-Σίγουρα υπάρχεις, σίγουρα κατρακυλάς κι εσύ<br>
-το κατήφορο.<br>
-<br>
-Ίσως και πάλι να είσαι εσύ που μπλέκεις<br>
-τη θάλασσα με τα χρώματα,<br>
-τη ματιά σου με τον έρωτα.<br>
-<br>
-Ίσως μια μέρα να γίνουμε ένα,<br>
-μετά το ανατρίχιασμα,<br>
-μετά το νανουριστό,<br>
-να κοιμηθούμε μαζί δίχως έννοιες,<br>
-ανάλαφροι σαν δύο πούπουλα<br>
-που μπλέχτηκαν μαζί,<br>
-σαν τα πήρε ο άνεμος<br>
-και έγιναν ένα.<br>
-
-
+                του ονείρου, της αύρας, της καρδιάς μου το κτύπημα,<br>
+                μιας ασήμαντης στιγμής που κιτρίνισε μέσα μου,<br>
+                μα που μοσχοβολά άνοιξη.<br>
+                <br>
+                Στις μέρες και τα χρόνια που διαρκούν όσο έλπιζα,<br>
+                πως είμαι στ’ άστρα κι εγώ μαζί σου,<br>
+                ταξιδιώτης της απέραντης κατηφόρας,<br>
+                χαζεύω κι εγώ το υπέροχο του διάβατος,<br>
+                μα και τη θλίψη του ερωτευμένου —<br>
+                <br>
+                Σαν αεράκι με περιλούζεις,<br>
+                σαν ανατρίχιασμα,<br>
+                σαν νανουριστό.<br>
+                Σε ακούω που όλο και έρχεσαι.<br>
+                <br>
+                Υπνοβατώ κι εγω μαζί σου<br>
+                σε όνειρα και λέξεις,<br>
+                σε μύθους και ιστορίες,<br>
+                σε βλέμματα και υπονοούμενα.<br>
+                <br>
+                Πάντοτε να ξυπνώ<br>
+                στην ασήμαντη εκείνη στιγμή<br>
+                που μοσχοβολά άνοιξη,<br>
+                από το άρωμα της ιδέας ότι<br>
+                κάπου κρύβεσαι, κάπου υπάρχεις —<br>
+                είτε σαν υπόσταση, είτε σαν φραγμός,<br>
+                είτε σαν ελπίδα, είτε σαν κουράγιο.<br>
+                Σίγουρα υπάρχεις, σίγουρα κατρακυλάς κι εσύ<br>
+                το κατήφορο.<br>
+                <br>
+                Ίσως και πάλι να είσαι εσύ που μπλέκεις<br>
+                τη θάλασσα με τα χρώματα,<br>
+                τη ματιά σου με τον έρωτα.<br>
+                <br>
+                Ίσως μια μέρα να γίνουμε ένα,<br>
+                μετά το ανατρίχιασμα,<br>
+                μετά το νανουριστό,<br>
+                να κοιμηθούμε μαζί δίχως έννοιες,<br>
+                ανάλαφροι σαν δύο πούπουλα<br>
+                που μπλέχτηκαν μαζί,<br>
+                σαν τα πήρε ο άνεμος<br>
+                και έγιναν ένα.<br>
             </p>
         </div>
         <div class="poem-image">
             <img src="analafros.jpg" alt="Ανάλαφρος">
         </div>
     </main>
+
+    <button id="likeButton" onclick="toggleLike()">❤️ Μου αρέσει (<span id="likeCount">0</span>)</button>
 
     <section id="comments">
         <h3>Σχόλια</h3>
@@ -161,17 +229,24 @@
         <ul id="commentList"></ul>
     </section>
 
-    <button id="likeButton" onclick="addLike()">❤️ Μου αρέσει (<span id="likeCount">0</span>)</button>
-
     <footer>
         <a href="poems.html" class="back-link">← Επιστροφή στα Ποιήματα</a>
     </footer>
 
     <script>
         let likeCount = 0;
+        let isLiked = false;
 
-        function addLike() {
-            likeCount++;
+        function toggleLike() {
+            const likeButton = document.getElementById('likeButton');
+            if (isLiked) {
+                likeCount--;
+                likeButton.classList.remove('liked');
+            } else {
+                likeCount++;
+                likeButton.classList.add('liked');
+            }
+            isLiked = !isLiked;
             document.getElementById('likeCount').innerText = likeCount;
         }
 
@@ -182,13 +257,30 @@
             if (commentText !== "") {
                 let commentList = document.getElementById('commentList');
                 let newComment = document.createElement('li');
-                newComment.innerText = commentText;
-                commentList.appendChild(newComment);
+
+                let userSpan = document.createElement('span');
+                userSpan.className = 'comment-user';
+                userSpan.innerText = 'Χρήστης';
+
+                let timeSpan = document.createElement('span');
+                timeSpan.className = 'comment-time';
+                timeSpan.innerText = new Date().toLocaleTimeString('el-GR');
+
+                let textSpan = document.createElement('span');
+                textSpan.className = 'comment-text';
+                textSpan.innerText = commentText;
+
+                let headerDiv = document.createElement('div');
+                headerDiv.appendChild(userSpan);
+                headerDiv.appendChild(timeSpan);
+
+                newComment.appendChild(headerDiv);
+                newComment.appendChild(textSpan);
+
+                commentList.insertBefore(newComment, commentList.firstChild);
                 commentBox.value = "";
             }
         }
     </script>
 </body>
 </html>
-
-
