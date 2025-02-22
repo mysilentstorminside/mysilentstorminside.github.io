@@ -38,7 +38,8 @@ header {
 
 .hero-image {
     width: 100%;
-    max-height: 400px; /* Μειωμένο για να χωράει καλύτερα */
+    height: auto; /* Αφαίρεση max-height για να φαίνεται ολόκληρη */
+    max-height: 500px; /* Μέγιστο ύψος αλλά όχι μικρότερο από το περιεχόμενο */
     object-fit: cover;
 }
 
@@ -48,11 +49,11 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 40px; /* Αυξημένη απόσταση από 20px σε 40px */
 }
 
 nav ul li {
-    margin: 0; /* Αφαίρεση margin που υπήρχε */
+    margin: 0;
 }
 
 nav ul li a {
@@ -62,7 +63,7 @@ nav ul li a {
 }
 
 footer {
-    margin-top: auto; /* Σπρώχνει το footer στο κάτω μέρος */
+    margin-top: auto;
     padding: 20px;
     background-color: #333;
 }
@@ -183,6 +184,35 @@ main {
     padding-left: 40px;
 }
 
+/* Email Collection Form */
+#subscribe-form {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(191, 87, 0, 0.9);
+    margin: 10px auto;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+#subscribe-form iframe {
+    width: 100%;
+    height: 250px;
+    border: none;
+}
+
+#subscribe-form p {
+    font-size: 0.8rem;
+    color: #f4f4f4;
+    margin: 5px 0 0;
+}
+
+#subscribe-form a {
+    color: #FFD700;
+    text-decoration: underline;
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
     body {
@@ -208,7 +238,7 @@ main {
 
     nav ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 20px; /* Λιγότερη απόσταση στο mobile για να χωράει */
     }
 
     nav ul li {
@@ -272,5 +302,14 @@ main {
 
     button {
         width: 100%;
+    }
+
+    #subscribe-form {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    #subscribe-form iframe {
+        height: 300px;
     }
 }
