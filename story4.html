@@ -111,31 +111,6 @@
             font-size: 16px;
         }
 
-        #likeButton {
-            background-color: transparent;
-            color: white;
-            border: 1px solid #555;
-            padding: 5px 15px;
-            margin-top: 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        #likeButton:hover {
-            background-color: #333;
-        }
-
-        #likeButton.liked {
-            color: #ff8c00;
-        }
-
-        #likeCount {
-            margin-left: 5px;
-        }
-
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -183,6 +158,7 @@
             <img src="story4image.jpg" alt="Ιδιαίτερη μέρα">
         </div>
     </main>
+
     <section id="comments">
         <h3>Σχόλια</h3>
         <textarea id="commentBox" placeholder="Γράψε ένα σχόλιο..."></textarea>
@@ -195,22 +171,6 @@
     </footer>
 
     <script>
-        let likeCount = 0;
-        let isLiked = false;
-
-        function toggleLike() {
-            const likeButton = document.getElementById('likeButton');
-            if (isLiked) {
-                likeCount--;
-                likeButton.classList.remove('liked');
-            } else {
-                likeCount++;
-                likeButton.classList.add('liked');
-            }
-            isLiked = !isLiked;
-            document.getElementById('likeCount').innerText = likeCount;
-        }
-
         function addComment() {
             let commentBox = document.getElementById('commentBox');
             let commentText = commentBox.value.trim();
