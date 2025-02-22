@@ -11,14 +11,14 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden; /* Αποτρέπει το scroll */
+            overflow: hidden;
             font-family: Arial, sans-serif;
         }
 
         .index-page {
             display: flex;
             flex-direction: column;
-            height: 100vh; /* Χρησιμοποιεί το ύψος της οθόνης */
+            height: 100vh;
         }
 
         header {
@@ -40,14 +40,14 @@
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            font-size: 1.3rem; /* Μεγαλύτερα γράμματα για τους συνδέσμους */
-            font-weight: bold; /* Έντονη γραμματοσειρά */
+            font-size: 1.3rem;
+            font-weight: bold;
         }
 
         .hero-image {
             width: 100%;
-            height: 60vh; /* Σταθερό ύψος για την εικόνα */
-            object-fit: cover; /* Διασφαλίζει ότι η εικόνα θα γεμίζει τον χώρο */
+            height: 60vh;
+            object-fit: cover;
         }
 
         footer {
@@ -55,14 +55,14 @@
             padding: 10px;
             background-color: #333;
             color: #fff;
-            flex-shrink: 0; /* Διασφαλίζει ότι το footer δεν θα μεγαλώνει */
+            flex-shrink: 0;
         }
 
         /* Email Collection Form */
         #subscribe-form {
             text-align: center;
             padding: 20px;
-            background-color: rgba(191, 87, 0, 0.9); /* Deep orange with 90% opacity */
+            background-color: rgba(191, 87, 0, 0.9);
             margin: 20px auto;
             max-width: 500px;
             border-radius: 10px;
@@ -75,37 +75,37 @@
             font-size: 1.5rem;
         }
 
-        #subscribe-form input[type="email"] {
-            padding: 10px;
-            width: 80%;
-            max-width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        #subscribe-form button {
-            padding: 10px 20px;
-            background-color: #FF4500; /* Deep orange-red */
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        #subscribe-form button:hover {
-            background-color: #CC3700; /* Darker shade on hover */
-        }
-
         #subscribe-form p {
             font-size: 0.8rem;
             color: #f4f4f4;
         }
 
         #subscribe-form a {
-            color: #FFD700; /* Golden yellow for links */
+            color: #FFD700;
             text-decoration: underline;
+        }
+
+        /* Responsive iframe */
+        #subscribe-form iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            #subscribe-form {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            #subscribe-form iframe {
+                height: 350px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -127,16 +127,12 @@
     <div id="subscribe-form">
         <h3>Εγγραφή για Ενημερώσεις</h3>
         <p>Εγγραφείτε για να λαμβάνετε ειδοποιήσεις όταν δημοσιεύω νέο περιεχόμενο!</p>
-        <form action="#" method="post">
-            <input type="email" name="email" placeholder="Δώστε το email σας" required>
-            <button type="submit">Εγγραφή</button>
-       https://docs.google.com/spreadsheets/d/1v54Ut3ADw1yjun_PMnmKuSUpP0zMDQ2mRZYPBweh4Z8/edit?usp=sharing
-        </form>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdJO348Ot35AB1HHp6FOc-4tsmwc-UhiNyWIq5HIOe0LSp_dQ/viewform?embedded=true" width="100%" height="300" frameborder="0" marginheight="0" marginwidth="0">Φόρτωση...</iframe>
         <p>Δεσμευόμαστε για την προστασία της ιδιωτικότητάς σας. Διαβάστε την <a href="privacy.html">Πολιτική Απορρήτου</a>.</p>
     </div>
 
     <footer>
-        <p>&copy; 2025 Σιωπηλή Καταιγίδα</p>
+        <p>© 2025 Σιωπηλή Καταιγίδα</p>
     </footer>
 </body>
 </html>
