@@ -41,6 +41,7 @@ header {
     height: auto;
     max-height: 500px;
     object-fit: cover;
+    flex-grow: 1; /* Αναπτύσσεται για να γεμίσει τον χώρο */
 }
 
 nav ul {
@@ -184,35 +185,6 @@ main {
     padding-left: 40px;
 }
 
-/* Email Collection Form */
-#subscribe-form {
-    text-align: center;
-    padding: 15px;
-    background-color: rgba(191, 87, 0, 0.9);
-    margin: 10px auto;
-    max-width: 500px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    color: #fff;
-}
-
-#subscribe-form iframe {
-    width: 100%;
-    height: 250px;
-    border: none;
-}
-
-#subscribe-form p {
-    font-size: 0.8rem;
-    color: #f4f4f4;
-    margin: 5px 0 0;
-}
-
-#subscribe-form a {
-    color: #FFD700;
-    text-decoration: underline;
-}
-
 /* Mobile Styles */
 @media (max-width: 768px) {
     body {
@@ -302,14 +274,5 @@ main {
 
     button {
         width: 100%;
-    }
-
-    #subscribe-form {
-        margin: 5px;
-        padding: 10px;
-    }
-
-    #subscribe-form iframe {
-        height: 300px;
     }
 }
