@@ -12,14 +12,13 @@
             background-color: #1a1a1a;
             color: white;
             font-family: 'Dancing Script', cursive;
-            font-size: 28px;
             margin: 0;
             padding: 0;
+            text-align: center;
         }
 
         header {
             margin-top: 20px;
-            text-align: center;
         }
 
         h1 {
@@ -28,38 +27,39 @@
 
         .container {
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: flex-start;
-            max-width: 70%;
-            margin: 30px auto;
+            max-width: 80%;
+            margin: 0 auto;
             position: relative;
+            margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         .story {
-            font-size: 30px;
-            line-height: 1.8;
+            font-size: 26px;
+            line-height: 1.1;
             text-align: left;
-            max-width: 60%;
+            max-width: 50%;
             padding-right: 20px;
         }
 
         .story-image {
-            position: absolute;
-            top: -20px;
-            right: 0;
+            position: relative;
+            max-width: 50%;
         }
 
         .story-image img {
-            width: 450px;
+            width: 100%;
+            max-width: 1000px;
             height: auto;
             border-radius: 100px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
         }
 
         .back-link {
             color: #ff8c00;
             text-decoration: none;
-            font-size: 24px;
         }
 
         .back-link:hover {
@@ -68,43 +68,77 @@
 
         #comments {
             margin-top: 40px;
-            text-align: center;
+            text-align: left;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         #commentBox {
-            width: 80%;
-            max-width: 600px;
-            padding: 15px;
-            font-size: 22px;
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
             margin-top: 10px;
+            background-color: #333;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 4px;
         }
 
         #commentList {
             list-style: none;
             padding: 0;
-            font-size: 24px;
-        }
-
-        #likeButton {
-            background-color: #ff8c00;
-            color: white;
-            border: none;
-            padding: 15px 30px;
             margin-top: 20px;
-            font-size: 22px;
-            cursor: pointer;
-            border-radius: 10px;
         }
 
-        #likeButton:hover {
-            background-color: #e07b00;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 20px;
+        #commentList li {
+            background-color: #2a2a2a;
             padding: 10px;
-            font-size: 22px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comment-user {
+            font-weight: bold;
+            color: #ff8c00;
+            font-size: 14px;
+        }
+
+        .comment-time {
+            color: #888;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .comment-text {
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .story, .story-image {
+                max-width: 100%;
+                padding-right: 0;
+            }
+
+            .story {
+                font-size: 20px;
+            }
+
+            .story-image img {
+                border-radius: 50px;
+            }
+
+            #comments, #commentBox {
+                max-width: 90%;
+            }
         }
     </style>
 </head>
@@ -117,21 +151,7 @@
     <main class="container">
         <div class="story">
             <p>
-                Η ιστορία που θα σας πω είναι απλή. Μια μέρα, ενώ περπατούσα, συνάντησα ένα μικρό πουλί. Αυτή είναι μια σύντομη περίληψη της ιστορίας μου. Εδώ μπορείτε να σταματήσετε να διαβάζετε και δεν θα έχετε χάσει τίποτα από το τι συνέβη εκείνο το δειλινό στην κορυφή ενός βουνού.<br>
-                Δεν θα γνωρίσετε όμως τι είχε συμβεί μέσα μου. Τι μπορεί να αισθάνθηκα που να χρειαστεί κάποιος να διαβάσει παρακάτω; Άρα, την ιστορία αυτή την απευθύνω σε αυτούς που θέλουν να μάθουν τι ξεχωριστό αισθάνθηκα από αυτό μου το συναπάντημα. Και ίσως για αυτούς που πιστεύουν ότι τα πουλιά δεν πετάνε μόνο πέρα, μόνο για να βρουν τροφή. Γιατί, όταν πέταξε μακριά το πουλί που συναπάντησα, σίγουρα απολάμβανε τη μαγεία του δειλινού εκείνου. Ας πάρουμε όμως τα πράγματα από την αρχή.<br><br>
-                Στο βουνό πάω όχι τόσο για να ξεφύγω, αλλά για να βρεθώ με μένα. Ένας τόπος συναντήσεως περισσότερο ψυχικός παρά φυσικός. Έτσι ακριβώς και το τοπίο. Με δέος απλώνεται η κορυφή τόσο μακριά σου, όπως κοιτούσες τη ζωή σαν ήσουν παιδί. Βήμα, βήμα και ανάσα, ανάσα, όλο και πιο βαριά όταν η πλαγιά γίνεται απότομη. Μοιράζω όμως τον στόχο σε πιο μικρούς: μέχρι τον επόμενο λόφο για την ώρα. Ξέχνα την κορυφή, γιατί ζαλίζεσαι σαν γέρνεις τόσο πίσω το κεφάλι. Κάποτε θα απολαύσω ένα ξαφνικό πέταγμα ενός πουλιού που το τρόμαξε η παρουσία μου. Γιατί το βουνό ανήκει στα πουλιά και σε κάθε λογής ζώο που ζει από αυτό. Εγώ είμαι ένας περαστικός, ένας τουρίστας στο τοπίο. Πώς με συνεπαίρνουν οι σκέψεις... Λόφο με λόφο, μόλις φτάνω στα τρία συνεχόμενα μικρά δέντρα, ξέρω ότι είμαι στην κορυφή. Εννοώ σε αυτή την κορυφή, γιατί μετά έχει άλλες, και πιο μετά υπάρχει το πορτοκαλί σκούρο του δειλινού και μετά η άβυσσος του ουρανού.<br><br>
-                Εκεί ακριβώς, στο πρώτο δέντρο, στο ύψος των ματιών μου, συναπάντησα το πιο όμορφο μικρό πουλάκι. Μια σταλιά μικρό πλασματάκι, γέννημα του πανέμορφου αυτού βουνού και των χρωμάτων του δειλινού. Καθόταν σε ένα κλαδί, μόλις ένα μέτρο μακριά μου. Δεν πέταξε μακριά, δεν το τρόμαξα. Με κοίταξε, το κοίταξα. Είδα τα υπέροχα γκριζόμαυρα φτερά του, το μπλε κάτω από τον λαιμό του. Γύρισε λίγο το κεφάλι στο πλάι και είδα τα μαύρα ματάκια του να με κοιτούν. Σαν το προσπέρασα, πέταξε, πήγε στο δεύτερο δέντρο, κάθισε και με κοίταξε ξανά. Και εγώ το κοίταζα. Ένιωσα κάτι που δεν έχουμε λέξη να το εκφράσω. Ούτε παρόμοιο αίσθημα για να σας το περιγράψω. Μετά, το πουλάκι πέταξε ψηλά, έκανε σχεδόν δύο γύρους από πάνω μου και έφυγε πίσω από το βουνό.<br><br>
-                Το όλο αυτό συναπάντημα ίσως πήρε ένα λεπτό. Ένα λεπτό διάρκειας αυτή η συνάντηση δύο διαφορετικών πλασμάτων πάνω σε ένα βουνό, από τις χιλιάδες βουνά ενός πλανήτη, από τα δισεκατομμύρια πλανητών του σύμπαντός μας. Σταματώ εδώ, γιατί μέχρι εδώ γνωρίζουμε.<br><br>
-                Μια στιγμή στο άπειρο του χρόνου. Το πουλάκι δεν περίμενε κάτι από μένα, ούτε εγώ από αυτό. Ήταν να βρεθούμε, και βρεθήκαμε. Ένα λεπτό πιο αργά να πήγαινα ή αυτό να πετούσε νωρίτερα, δεν θα είχαμε αυτή τη συνάντηση. Ίσως έτσι να είναι η ζωή μας. Τυχαία συναπαντήματα που μας ορίζουν και στους οποίους δίνουμε σκοπό.<br><br>
-                Όλη η ιστορία μου, όπως σας είπα, μπορεί να ειπωθεί απλά:<br>
-                «Συνάντησα ένα πουλάκι».<br><br>
-                Μπορώ όμως να προσθέσω ότι κάθε φορά που ανεβαίνω το βουνό και φτάνω στα τρία διαδοχικά δέντρα, με συνεπαίρνει ένα αίσθημα:<br>
-                Ότι ίσως το συναντήσω ξανά.<br><br>
-                Έτσι απλά, για να ξέρω πως ακόμη υπάρχει.
-                
-                
-                
-                
+                [Εδώ πρόσθεσε το κείμενο της ιστορίας σου για το "Συναπάντημα"]
             </p>
         </div>
         <div class="story-image">
@@ -146,20 +166,11 @@
         <ul id="commentList"></ul>
     </section>
 
-    <button id="likeButton" onclick="addLike()">❤️ Μου αρέσει (<span id="likeCount">0</span>)</button>
-
     <footer>
         <a href="stories.html" class="back-link">← Επιστροφή στις Ιστορίες</a>
     </footer>
 
     <script>
-        let likeCount = 0;
-
-        function addLike() {
-            likeCount++;
-            document.getElementById('likeCount').innerText = likeCount;
-        }
-
         function addComment() {
             let commentBox = document.getElementById('commentBox');
             let commentText = commentBox.value.trim();
@@ -167,8 +178,27 @@
             if (commentText !== "") {
                 let commentList = document.getElementById('commentList');
                 let newComment = document.createElement('li');
-                newComment.innerText = commentText;
-                commentList.appendChild(newComment);
+
+                let userSpan = document.createElement('span');
+                userSpan.className = 'comment-user';
+                userSpan.innerText = 'Χρήστης';
+
+                let timeSpan = document.createElement('span');
+                timeSpan.className = 'comment-time';
+                timeSpan.innerText = new Date().toLocaleTimeString('el-GR');
+
+                let textSpan = document.createElement('span');
+                textSpan.className = 'comment-text';
+                textSpan.innerText = commentText;
+
+                let headerDiv = document.createElement('div');
+                headerDiv.appendChild(userSpan);
+                headerDiv.appendChild(timeSpan);
+
+                newComment.appendChild(headerDiv);
+                newComment.appendChild(textSpan);
+
+                commentList.insertBefore(newComment, commentList.firstChild);
                 commentBox.value = "";
             }
         }
