@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Απόλαυσε το ταξίδι σου γιε μου</title>
+    <title>Απόλαυσε το ταξίδι σου γιέ μου</title>
     <link rel="stylesheet" href="style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap');
@@ -12,14 +12,13 @@
             background-color: #1a1a1a;
             color: white;
             font-family: 'Dancing Script', cursive;
-            font-size: 28px;
             margin: 0;
             padding: 0;
+            text-align: center;
         }
 
         header {
             margin-top: 20px;
-            text-align: center;
         }
 
         h1 {
@@ -28,29 +27,31 @@
 
         .container {
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: flex-start;
-            max-width: 70%;
-            margin: 30px auto;
+            max-width: 80%;
+            margin: 0 auto;
             position: relative;
+            margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         .story {
-            font-size: 30px;
+            font-size: 26px;
             line-height: 1.8;
             text-align: left;
-            max-width: 60%;
+            max-width: 50%;
             padding-right: 20px;
         }
 
         .story-image {
-    position: absolute;
-    top: -20px;
-    right: -130px; /
+            position: relative;
+            max-width: 50%;
         }
 
         .story-image img {
-            width: 450px;
+            width: 100%;
+            max-width: 1000px;
             height: auto;
             border-radius: 100px;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
@@ -68,43 +69,83 @@
 
         #comments {
             margin-top: 40px;
-            text-align: center;
+            text-align: left;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         #commentBox {
-            width: 80%;
+            width: 100%;
             max-width: 600px;
             padding: 15px;
-            font-size: 22px;
             margin-top: 10px;
+            background-color: #333;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 4px;
+            font-size: 22px;
         }
 
         #commentList {
             list-style: none;
             padding: 0;
-            font-size: 24px;
-        }
-
-        #likeButton {
-            background-color: #ff8c00;
-            color: white;
-            border: none;
-            padding: 15px 30px;
             margin-top: 20px;
-            font-size: 22px;
-            cursor: pointer;
-            border-radius: 10px;
         }
 
-        #likeButton:hover {
-            background-color: #e07b00;
+        #commentList li {
+            background-color: #2a2a2a;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comment-user {
+            font-weight: bold;
+            color: #ff8c00;
+            font-size: 14px;
+        }
+
+        .comment-time {
+            color: #888;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .comment-text {
+            margin-top: 5px;
+            font-size: 16px;
         }
 
         footer {
-            text-align: center;
             margin-top: 20px;
             padding: 10px;
-            font-size: 22px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .story, .story-image {
+                max-width: 100%;
+                padding-right: 0;
+            }
+
+            .story {
+                font-size: 20px;
+            }
+
+            .story-image img {
+                border-radius: 50px;
+            }
+
+            #comments, #commentBox {
+                max-width: 90%;
+            }
         }
     </style>
 </head>
@@ -117,49 +158,43 @@
     <main class="container">
         <div class="story">
             <p>
-                Τώρα που πια έχεις ενηλικιωθεί, ας μαζέψουμε αυτά που μαζί μάθαμε, αλλάζοντας κάποια από αυτά στην πορεία, ανάλογα με τα χρώματα του ουρανού και τις πλημμύρες που έρχονται.
-Έτσι είναι, γιε μου· ετοιμάσου για τις πλημμύρες που σίγουρα έρχονται, έστω κι αν σήμερα περνούμε ξηρασία.
-Ετοιμάσου για τη μοναξιά, ενώ οι φίλοι σου δίπλα πίνουν το ποτό τους και γελούν με τις ιστορίες που περάσατε στα τεράστια χρόνια της εφηβείας.
-<br><br>
-Σαν είσαι έτοιμος για τα σκοτεινά βράδια που διαρκούν μια βδομάδα, θα τα περνάς μέσα σε λιακάδα και φως και τραγούδι, μέσα σε μια στιγμή.
-Με αισιοδοξία να αντιμετωπίζεις τον κόσμο με καλοσύνη και ευγένεια.
-Παράλληλα, να μην ξεχνάς ότι ο κόσμος δεν είναι αγγελικά φτιαγμένος.
-Να χαιρετάς, να γελάς και να συγκινείσαι.
-Να είσαι πάντοτε αληθινός και να παραμένεις δυνατός στα αισθήματά σου, πιστός στην αγκαλιά της μάνας σου, στην παρέα του παπά σου και στην αβάσταχτη αγάπη της αδελφής σου.
-Κράτα τα σαν κομποσκοίνι γύρω από τον καρπό σου, έτσι που κάθε κτύπος της καρδιάς σου να σε θυμίζει ότι το αίμα σου ρέει σε εμάς που σε αγαπούμε πάνω από τον εαυτό μας.
-<br><br>
-Να ξυπνάς και να ευγνωμονείς την πρώτη εικόνα στα μάτια σου, έστω κι αν είναι ένας τοίχος σε μια χώρα μακρινή.
-Να νιώθεις την ευλογία για το δώρο που σου δόθηκε.
-Ξύπνα, όρμα πάνω και μην φοβάσαι να βάλεις μεγάλους στόχους.
-Να θυμάσαι ότι για μένα αυτά που για άλλους είναι δεδομένα, ήταν μεγάλοι στόχοι.
-Όπως ένα πιάτο φαγητό.
-Θυμάσαι που πατούσες στο πίσω μέρος των ποδιών μου, μετά στη ράχη μου και μετά στους ώμους μου;
-Τώρα ήρθε η ώρα να βγεις πιο ψηλά.
-Θα πρέπει να δημιουργήσεις σιγά-σιγά τα σκαλοπάτια σου και μετά να τα ανεβαίνεις προς τα πάνω.
-<br><br>
-Όταν αγχώνεσαι γιατί πας σε μέρη που δεν γνωρίζεις, κατάλαβε ότι κάνεις το ορθό,
-γιατί ξεφεύγεις από τις συνήθειές σου και μαθαίνεις νέα πράγματα, εξελίσσεσαι και γνωρίζεις νέες πτυχές του εαυτού σου.
-Και να θυμάσαι, κάποτε πρέπει να κατεβούμε λίγα σκαλιά για να πάρουμε φόρα και να περάσουμε τα εμπόδια που υπάρχουν στο μυαλό μας.
-Να θυμάσαι, η ζωή σε κοιτά πίσω σαν καθρέφτης.
-Τρώγε σωστά, φτιάξε τα μαλλιά σου, ξυρίσου, πρόσεχε το σώμα σου, φρόντιζε τα δόντια σου και χαμογέλα στον καθρέφτη.
-Τότε αυτός θα σου χαμογελάσει πίσω.
-<br><br>
-Να παραμείνεις απλός και ποτέ μην αναζητήσεις ευτυχία από υλικά αγαθά.
-Είναι απάτη.
-Η αναποδιά, γιε μου, κρύβει ευκαιρίες, και η επιτυχία παγίδες.
-Μην παρασύρεσαι από τη στιγμή. Απογοητεύσου για λίγο, χάρηκες για λίγο και μετά προχώρα, βάζοντας το ένα πόδι μπροστά από το άλλο.
-<br><br>
-Και όταν βρεθείς σε νέους τόπους, νοητικούς και πραγματικούς, να μην ξεχνάς από πού ξεκίνησες.
-Μην ξεχάσεις ότι είσαι το μωρό μας που μας ζητούσες «την μπύλα και το τούι σου».
-Απόλαυσε το ταξίδι σου, γιε μου.
-Και κράτα μας πλάι σου όπου κι αν πας.
-Σε αγαπώ.
-
-                
-
-                
-                
-                
+                Τώρα που πια έχεις ενηλικιωθεί, ας μαζέψουμε αυτά που μαζί μάθαμε, αλλάζοντας κάποια από αυτά στην πορεία, ανάλογα με τα χρώματα του ουρανού και τις πλημμύρες που έρχονται.<br>
+                Έτσι είναι, γιε μου· ετοιμάσου για τις πλημμύρες που σίγουρα έρχονται, έστω κι αν σήμερα περνούμε ξηρασία.<br>
+                Ετοιμάσου για τη μοναξιά, ενώ οι φίλοι σου δίπλα πίνουν το ποτό τους και γελούν με τις ιστορίες που περάσατε στα τεράστια χρόνια της εφηβείας.<br>
+                <br>
+                Σαν είσαι έτοιμος για τα σκοτεινά βράδια που διαρκούν μια βδομάδα, θα τα περνάς μέσα σε λιακάδα και φως και τραγούδι, μέσα σε μια στιγμή.<br>
+                Με αισιοδοξία να αντιμετωπίζεις τον κόσμο με καλοσύνη και ευγένεια.<br>
+                Παράλληλα, να μην ξεχνάς ότι ο κόσμος δεν είναι αγγελικά φτιαγμένος.<br>
+                Να χαιρετάς, να γελάς και να συγκινείσαι.<br>
+                Να είσαι πάντοτε αληθινός και να παραμένεις δυνατός στα αισθήματά σου, πιστός στην αγκαλιά της μάνας σου, στην παρέα του παπά σου και στην αβάσταχτη αγάπη της αδελφής σου.<br>
+                Κράτα τα σαν κομποσκοίνι γύρω από τον καρπό σου, έτσι που κάθε κτύπος της καρδιάς σου να σε θυμίζει ότι το αίμα σου ρέει σε εμάς που σε αγαπούμε πάνω από τον εαυτό μας.<br>
+                <br>
+                Να ξυπνάς και να ευγνωμονείς την πρώτη εικόνα στα μάτια σου, έστω κι αν είναι ένας τοίχος σε μια χώρα μακρινή.<br>
+                Να νιώθεις την ευλογία για το δώρο που σου δόθηκε.<br>
+                Ξύπνα, όρμα πάνω και μην φοβάσαι να βάλεις μεγάλους στόχους.<br>
+                Να θυμάσαι ότι για μένα αυτά που για άλλους είναι δεδομένα, ήταν μεγάλοι στόχοι.<br>
+                Όπως ένα πιάτο φαγητό.<br>
+                Θυμάσαι που πατούσες στο πίσω μέρος των ποδιών μου, μετά στη ράχη μου και μετά στους ώμους μου;<br>
+                Τώρα ήρθε η ώρα να βγεις πιο ψηλά.<br>
+                Θα πρέπει να δημιουργήσεις σιγά-σιγά τα σκαλοπάτια σου και μετά να τα ανεβαίνεις προς τα πάνω.<br>
+                <br>
+                Όταν αγχώνεσαι γιατί πας σε μέρη που δεν γνωρίζεις, κατάλαβε ότι κάνεις το ορθό,<br>
+                γιατί ξεφεύγεις από τις συνήθειές σου και μαθαίνεις νέα πράγματα, εξελίσσεσαι και γνωρίζεις νέες πτυχές του εαυτού σου.<br>
+                Και να θυμάσαι, κάποτε πρέπει να κατεβούμε λίγα σκαλιά για να πάρουμε φόρα και να περάσουμε τα εμπόδια που υπάρχουν στο μυαλό μας.<br>
+                Να θυμάσαι, η ζωή σε κοιτά πίσω σαν καθρέφτης.<br>
+                Τρώγε σωστά, φτιάξε τα μαλλιά σου, ξυρίσου, πρόσεχε το σώμα σου, φρόντιζε τα δόντια σου και χαμογέλα στον καθρέφτη.<br>
+                Τότε αυτός θα σου χαμογελάσει πίσω.<br>
+                <br>
+                Να παραμείνεις απλός και ποτέ μην αναζητήσεις ευτυχία από υλικά αγαθά.<br>
+                Είναι απάτη.<br>
+                Η αναποδιά, γιε μου, κρύβει ευκαιρίες, και η επιτυχία παγίδες.<br>
+                Μην παρασύρεσαι από τη στιγμή. Απογοητεύσου για λίγο, χάρηκες για λίγο και μετά προχώρα, βάζοντας το ένα πόδι μπροστά από το άλλο.<br>
+                <br>
+                Και όταν βρεθείς σε νέους τόπους, νοητικούς και πραγματικούς, να μην ξεχνάς από πού ξεκίνησες.<br>
+                Μην ξεχάσεις ότι είσαι το μωρό μας που μας ζητούσες «την μπύλα και το τούι σου».<br>
+                Απόλαυσε το ταξίδι σου, γιε μου.<br>
+                Και κράτα μας πλάι σου όπου κι αν πας.<br>
+                Σε αγαπώ.<br>
             </p>
         </div>
         <div class="story-image">
@@ -174,20 +209,11 @@
         <ul id="commentList"></ul>
     </section>
 
-    <button id="likeButton" onclick="addLike()">❤️ Μου αρέσει (<span id="likeCount">0</span>)</button>
-
     <footer>
         <a href="stories.html" class="back-link">← Επιστροφή στις Ιστορίες</a>
     </footer>
 
     <script>
-        let likeCount = 0;
-
-        function addLike() {
-            likeCount++;
-            document.getElementById('likeCount').innerText = likeCount;
-        }
-
         function addComment() {
             let commentBox = document.getElementById('commentBox');
             let commentText = commentBox.value.trim();
@@ -195,8 +221,27 @@
             if (commentText !== "") {
                 let commentList = document.getElementById('commentList');
                 let newComment = document.createElement('li');
-                newComment.innerText = commentText;
-                commentList.appendChild(newComment);
+
+                let userSpan = document.createElement('span');
+                userSpan.className = 'comment-user';
+                userSpan.innerText = 'Χρήστης';
+
+                let timeSpan = document.createElement('span');
+                timeSpan.className = 'comment-time';
+                timeSpan.innerText = new Date().toLocaleTimeString('el-GR');
+
+                let textSpan = document.createElement('span');
+                textSpan.className = 'comment-text';
+                textSpan.innerText = commentText;
+
+                let headerDiv = document.createElement('div');
+                headerDiv.appendChild(userSpan);
+                headerDiv.appendChild(timeSpan);
+
+                newComment.appendChild(headerDiv);
+                newComment.appendChild(textSpan);
+
+                commentList.insertBefore(newComment, commentList.firstChild);
                 commentBox.value = "";
             }
         }
