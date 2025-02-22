@@ -36,11 +36,13 @@
             text-align: left;
             max-width: 50%;
             padding-right: 20px;
+            box-sizing: border-box;
         }
 
         .story-image {
             position: relative;
             max-width: 50%;
+            box-sizing: border-box;
         }
 
         .story-image img {
@@ -120,6 +122,8 @@
             .story, .story-image {
                 max-width: 100%;
                 padding-right: 0;
+                width: 100%;
+                margin: 0;
             }
 
             .story {
@@ -128,6 +132,7 @@
 
             .story-image img {
                 border-radius: 50px;
+                max-width: 100%;
             }
 
             #comments, #commentBox {
