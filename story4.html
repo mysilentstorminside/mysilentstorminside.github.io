@@ -12,14 +12,13 @@
             background-color: #1a1a1a;
             color: white;
             font-family: 'Dancing Script', cursive;
-            font-size: 28px;
             margin: 0;
             padding: 0;
+            text-align: center;
         }
 
         header {
             margin-top: 20px;
-            text-align: center;
         }
 
         h1 {
@@ -28,31 +27,31 @@
 
         .container {
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: flex-start;
-            max-width: 70%;
-            margin: 30px auto;
+            max-width: 80%;
+            margin: 0 auto;
             position: relative;
+            margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         .story {
-            font-size: 30px;
+            font-size: 26px;
             line-height: 1.8;
             text-align: left;
-            max-width: 60%;
+            max-width: 50%;
             padding-right: 20px;
         }
 
         .story-image {
-    position: absolute;
-    top: -20px;
-    right: -130px; /
-}
-
-        
+            position: relative;
+            max-width: 50%;
+        }
 
         .story-image img {
-            width: 650px;
+            width: 100%;
+            max-width: 1000px;
             height: auto;
             border-radius: 100px;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
@@ -70,43 +69,83 @@
 
         #comments {
             margin-top: 40px;
-            text-align: center;
+            text-align: left;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         #commentBox {
-            width: 80%;
+            width: 100%;
             max-width: 600px;
             padding: 15px;
-            font-size: 22px;
             margin-top: 10px;
+            background-color: #333;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 4px;
+            font-size: 22px;
         }
 
         #commentList {
             list-style: none;
             padding: 0;
-            font-size: 24px;
-        }
-
-        #likeButton {
-            background-color: #ff8c00;
-            color: white;
-            border: none;
-            padding: 15px 30px;
             margin-top: 20px;
-            font-size: 22px;
-            cursor: pointer;
-            border-radius: 10px;
         }
 
-        #likeButton:hover {
-            background-color: #e07b00;
+        #commentList li {
+            background-color: #2a2a2a;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comment-user {
+            font-weight: bold;
+            color: #ff8c00;
+            font-size: 14px;
+        }
+
+        .comment-time {
+            color: #888;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .comment-text {
+            margin-top: 5px;
+            font-size: 16px;
         }
 
         footer {
-            text-align: center;
             margin-top: 20px;
             padding: 10px;
-            font-size: 22px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .story, .story-image {
+                max-width: 100%;
+                padding-right: 0;
+            }
+
+            .story {
+                font-size: 20px;
+            }
+
+            .story-image img {
+                border-radius: 50px;
+            }
+
+            #comments, #commentBox {
+                max-width: 90%;
+            }
         }
     </style>
 </head>
@@ -119,15 +158,13 @@
     <main class="container">
         <div class="story">
             <p>
-                Περπάτησα κάτω προς τη λίμνη. Όχι πως είχα να πάω κάπου. Όταν ο ήλιος κτυπούσε στο χιόνι, με διαπερνούσε μια ζεστασιά, αντίθετη με το παγερό αεράκι που φαινόταν να έρχεται είτε από τη λίμνη είτε από το αίσθημα της μοναξιάς.<br><br>
-                Λίγο πιο κάτω, οι άνθρωποι πλημμύριζαν τα εστιατόρια με την υπέροχη θέα της λίμνης. Κάπου απορροφούμε τις εικόνες που γυρεύουμε ασυνείδητα. Ένιωσα ένα αίσθημα μοναξιάς να με διαπερνά, ιδιαίτερα όταν παρατήρησα τον κόσμο να γελά και να περνά ευχάριστες οικογενειακές στιγμές. Κρατήθηκα. Μια σειρά από δέντρα, παγωμένα, αρνούνταν να κινηθούν στα απότομα ξεσπάσματα του αέρα. Κάτω στη λίμνη, ο κόσμος λιγοστός. Μέσα στη μισοπαγωμένη λίμνη κινούνταν κομμάτια πάγου με τέτοιο ρυθμό που νόμιζες ότι είχαν μια συνάντηση στη νότια πλευρά, όπου μαζεύονταν σιγά σιγά όλα τα περιττά κομμάτια. Οι γλάροι φαίνονταν να θέλουν να πετάξουν, αλλά ήταν σαν να μην ήξεραν πού να πάνε. Έτσι, έγιναν πεζοί κι αυτοί, σαν εμένα. Όταν κοντοστάθηκα να απολαύσω τη λίμνη, ένιωσα να έχω παρέα δύο γλάρους που με κοίταζαν απορημένα, λες και ήθελαν να με ρωτήσουν γιατί ήμουν μόνος τέτοια μέρα.<br><br>
-                Εκείνη ακριβώς τη στιγμή, όλα τα αισθήματα της σκληρής μοναξιάς ξεχύθηκαν σε λυγμούς από κλάμα. Παράξενο, αλλά ένιωσα ότι κατηφόρισα όλον αυτόν τον δρόμο για να έρθω εδώ ακριβώς να κλάψω. Έτσι ένιωσα πως ήταν κάτι που έπρεπε να κάνω την ιδιαίτερη αυτή μέρα των Χριστουγέννων.<br><br>
-                Ανάλαφρος, αποχαιρέτισα τους γλάρους κι ανηφόρισα προς την επιστροφή. Με περίμενε, άλλωστε, ένας σκοπός. Με την ιδέα πως είχα για παρέα έναν σκοπό, ποτέ δεν ένιωσα μόνος.
-                
-
-                
-                
-                
+                Περπάτησα κάτω προς τη λίμνη. Όχι πως είχα να πάω κάπου. Όταν ο ήλιος κτυπούσε στο χιόνι, με διαπερνούσε μια ζεστασιά, αντίθετη με το παγερό αεράκι που φαινόταν να έρχεται είτε από τη λίμνη είτε από το αίσθημα της μοναξιάς.<br>
+                <br>
+                Λίγο πιο κάτω, οι άνθρωποι πλημμύριζαν τα εστιατόρια με την υπέροχη θέα της λίμνης. Κάπου απορροφούμε τις εικόνες που γυρεύουμε ασυνείδητα. Ένιωσα ένα αίσθημα μοναξιάς να με διαπερνά, ιδιαίτερα όταν παρατήρησα τον κόσμο να γελά και να περνά ευχάριστες οικογενειακές στιγμές. Κρατήθηκα. Μια σειρά από δέντρα, παγωμένα, αρνούνταν να κινηθούν στα απότομα ξεσπάσματα του αέρα. Κάτω στη λίμνη, ο κόσμος λιγοστός. Μέσα στη μισοπαγωμένη λίμνη κινούνταν κομμάτια πάγου με τέτοιο ρυθμό που νόμιζες ότι είχαν μια συνάντηση στη νότια πλευρά, όπου μαζεύονταν σιγά σιγά όλα τα περιττά κομμάτια. Οι γλάροι φαίνονταν να θέλουν να πετάξουν, αλλά ήταν σαν να μην ήξεραν πού να πάνε. Έτσι, έγιναν πεζοί κι αυτοί, σαν εμένα. Όταν κοντοστάθηκα να απολαύσω τη λίμνη, ένιωσα να έχω παρέα δύο γλάρους που με κοίταζαν απορημένα, λες και ήθελαν να με ρωτήσουν γιατί ήμουν μόνος τέτοια μέρα.<br>
+                <br>
+                Εκείνη ακριβώς τη στιγμή, όλα τα αισθήματα της σκληρής μοναξιάς ξεχύθηκαν σε λυγμούς από κλάμα. Παράξενο, αλλά ένιωσα ότι κατηφόρισα όλον αυτόν τον δρόμο για να έρθω εδώ ακριβώς να κλάψω. Έτσι ένιωσα πως ήταν κάτι που έπρεπε να κάνω την ιδιαίτερη αυτή μέρα των Χριστουγέννων.<br>
+                <br>
+                Ανάλαφρος, αποχαιρέτισα τους γλάρους κι ανηφόρισα προς την επιστροφή. Με περίμενε, άλλωστε, ένας σκοπός. Με την ιδέα πως είχα για παρέα έναν σκοπό, ποτέ δεν ένιωσα μόνος.<br>
             </p>
         </div>
         <div class="story-image">
@@ -142,20 +179,11 @@
         <ul id="commentList"></ul>
     </section>
 
-    <button id="likeButton" onclick="addLike()">❤️ Μου αρέσει (<span id="likeCount">0</span>)</button>
-
     <footer>
         <a href="stories.html" class="back-link">← Επιστροφή στις Ιστορίες</a>
     </footer>
 
     <script>
-        let likeCount = 0;
-
-        function addLike() {
-            likeCount++;
-            document.getElementById('likeCount').innerText = likeCount;
-        }
-
         function addComment() {
             let commentBox = document.getElementById('commentBox');
             let commentText = commentBox.value.trim();
@@ -163,8 +191,27 @@
             if (commentText !== "") {
                 let commentList = document.getElementById('commentList');
                 let newComment = document.createElement('li');
-                newComment.innerText = commentText;
-                commentList.appendChild(newComment);
+
+                let userSpan = document.createElement('span');
+                userSpan.className = 'comment-user';
+                userSpan.innerText = 'Χρήστης';
+
+                let timeSpan = document.createElement('span');
+                timeSpan.className = 'comment-time';
+                timeSpan.innerText = new Date().toLocaleTimeString('el-GR');
+
+                let textSpan = document.createElement('span');
+                textSpan.className = 'comment-text';
+                textSpan.innerText = commentText;
+
+                let headerDiv = document.createElement('div');
+                headerDiv.appendChild(userSpan);
+                headerDiv.appendChild(timeSpan);
+
+                newComment.appendChild(headerDiv);
+                newComment.appendChild(textSpan);
+
+                commentList.insertBefore(newComment, commentList.firstChild);
                 commentBox.value = "";
             }
         }
