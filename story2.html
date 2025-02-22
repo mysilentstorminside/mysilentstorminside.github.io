@@ -6,23 +6,17 @@
     <title>Μια βόλτα απ'τα παλιά</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap');
-        
         body {
+            text-align: center;
             background-color: #1a1a1a;
             color: white;
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Cormorant Garamond', serif;
             margin: 0;
             padding: 0;
-            text-align: center;
         }
 
         header {
             margin-top: 20px;
-        }
-
-        h1 {
-            font-size: 60px;
         }
 
         .container {
@@ -38,7 +32,7 @@
 
         .story {
             font-size: 26px;
-            line-height: 1.8;
+            line-height: 1.1;
             text-align: left;
             max-width: 50%;
             padding-right: 20px;
@@ -47,7 +41,6 @@
         .story-image {
             position: relative;
             max-width: 50%;
-            margin-left: auto; /* Aligns image to the right */
         }
 
         .story-image img {
@@ -55,13 +48,12 @@
             max-width: 1000px;
             height: auto;
             border-radius: 100px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
         }
 
         .back-link {
             color: #ff8c00;
             text-decoration: none;
-            font-size: 24px;
         }
 
         .back-link:hover {
@@ -78,14 +70,13 @@
 
         #commentBox {
             width: 100%;
-            max-width: 600px;
-            padding: 15px;
+            max-width: 500px;
+            padding: 10px;
             margin-top: 10px;
             background-color: #333;
             color: white;
             border: 1px solid #555;
             border-radius: 4px;
-            font-size: 22px;
         }
 
         #commentList {
@@ -120,9 +111,29 @@
             font-size: 16px;
         }
 
-        footer {
+        #likeButton {
+            background-color: transparent;
+            color: white;
+            border: 1px solid #555;
+            padding: 5px 15px;
             margin-top: 20px;
-            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        #likeButton:hover {
+            background-color: #333;
+        }
+
+        #likeButton.liked {
+            color: #ff8c00;
+        }
+
+        #likeCount {
+            margin-left: 5px;
         }
 
         @media (max-width: 768px) {
@@ -134,7 +145,6 @@
             .story, .story-image {
                 max-width: 100%;
                 padding-right: 0;
-                margin-left: 0;
             }
 
             .story {
@@ -178,7 +188,6 @@
             <img src="story2image.jpg" alt="Μια βόλτα απ'τα παλιά">
         </div>
     </main>
-
     <section id="comments">
         <h3>Σχόλια</h3>
         <textarea id="commentBox" placeholder="Γράψε ένα σχόλιο..."></textarea>
@@ -191,6 +200,22 @@
     </footer>
 
     <script>
+        let likeCount = 0;
+        let isLiked = false;
+
+        function toggleLike() {
+            const likeButton = document.getElementById('likeButton');
+            if (isLiked) {
+                likeCount--;
+                likeButton.classList.remove('liked');
+            } else {
+                likeCount++;
+                likeButton.classList.add('liked');
+            }
+            isLiked = !isLiked;
+            document.getElementById('likeCount').innerText = likeCount;
+        }
+
         function addComment() {
             let commentBox = document.getElementById('commentBox');
             let commentText = commentBox.value.trim();
