@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Αβυσσος</title>
+    <title>Άβυσσος</title>
     <link rel="stylesheet" href="style.css">
     <style>
         body {
@@ -27,10 +27,11 @@
             margin: 0 auto;
             position: relative;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         .poem {
-            font-size: 22px;
+            font-size: 26px; /* Increased from 22px */
             line-height: 1.1;
             text-align: left;
             max-width: 50%;
@@ -38,14 +39,13 @@
         }
 
         .poem-image {
-            position: absolute;
-            top: -20px;
-            right: 0;
-            max-width: none;
+            position: relative; /* Changed from absolute for responsiveness */
+            max-width: 50%;
         }
 
         .poem-image img {
-            width: 600px; /
+            width: 100%;
+            max-width: 1000px; /* Increased from 600px */
             height: auto;
             border-radius: 100px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
@@ -62,34 +62,102 @@
 
         #comments {
             margin-top: 40px;
-            text-align: center;
+            text-align: left;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         #commentBox {
-            width: 80%;
+            width: 100%;
             max-width: 500px;
             padding: 10px;
             margin-top: 10px;
+            background-color: #333;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 4px;
         }
 
         #commentList {
             list-style: none;
             padding: 0;
+            margin-top: 20px;
+        }
+
+        #commentList li {
+            background-color: #2a2a2a;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comment-user {
+            font-weight: bold;
+            color: #ff8c00;
+            font-size: 14px;
+        }
+
+        .comment-time {
+            color: #888;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .comment-text {
+            margin-top: 5px;
+            font-size: 16px;
         }
 
         #likeButton {
-            background-color: #ff8c00;
+            background-color: transparent;
             color: white;
-            border: none;
-            padding: 10px 20px;
+            border: 1px solid #555;
+            padding: 5px 15px;
             margin-top: 20px;
-            font-size: 18px;
+            font-size: 16px;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
         }
 
         #likeButton:hover {
-            background-color: #e07b00;
+            background-color: #333;
+        }
+
+        #likeButton.liked {
+            color: #ff8c00;
+        }
+
+        #likeCount {
+            margin-left: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .poem, .poem-image {
+                max-width: 100%;
+                padding-right: 0;
+            }
+
+            .poem {
+                font-size: 20px; /* Adjusted for mobile */
+            }
+
+            .poem-image img {
+                border-radius: 50px;
+            }
+
+            #comments, #commentBox {
+                max-width: 90%;
+            }
         }
     </style>
 </head>
@@ -103,42 +171,40 @@
         <div class="poem">
             <p>
                 Περισσότερο μόνος αισθάνομαι όταν νιώθω πως συνυπάρχουμε<br>
-με τη βροχή που πέφτει,<br>
-με το ξεπέταγμα ενός πουλιού,<br>
-με την ιδέα ότι ήσουν<br>
-πίσω από το παράθυρο που δεν άνοιξα,<br>
-στο στενό που δεν μπήκα.<br>
-<br>
-Ίσως κάποτε να με άγγιξαν άθελα τα μαλλιά σου<br>
-σε ένα μπαράκι και δεν σε πρόσεξα.<br>
-<br>
-Ίσως μόλις να είχες φύγει από το κάθισμα που κάθισα,<br>
-από τη βρύση που ήπια νερό.<br>
-<br>
-Περισσότερο μόνος αισθάνομαι όταν νιώθω πως συνυπάρχουμε<br>
-με τη μαγεία του δειλινού,<br>
-με το φύσημα του ανέμου όταν παίρνει τα φύλλα<br>
-και τα ρίχνει και τα σκορπά,<br>
-όταν αυτά κιτρινίζουν και σιγά σιγά χάνονται<br>
-στην άβυσσο της ελπίδας<br>
-να ξαναγίνουν δέντρα μια μέρα,<br>
-να ξανάρθει αυτό το απαλό αεράκι να τα πάρει,<br>
-να πέσουν στο σβέρκο σου σαν περνάς<br>
-κι ας μην με αγγίξεις.<br>
-Μόνο να περνάς<br>
-από τις νότες των τραγουδιών,<br>
-από τις σταγόνες της βροχής,<br>
-από τα όνειρά μου.<br>
-
-
-
-
+                με τη βροχή που πέφτει,<br>
+                με το ξεπέταγμα ενός πουλιού,<br>
+                με την ιδέα ότι ήσουν<br>
+                πίσω από το παράθυρο που δεν άνοιξα,<br>
+                στο στενό που δεν μπήκα.<br>
+                <br>
+                Ίσως κάποτε να με άγγιξαν άθελα τα μαλλιά σου<br>
+                σε ένα μπαράκι και δεν σε πρόσεξα.<br>
+                <br>
+                Ίσως μόλις να είχες φύγει από το κάθισμα που κάθισα,<br>
+                από τη βρύση που ήπια νερό.<br>
+                <br>
+                Περισσότερο μόνος αισθάνομαι όταν νιώθω πως συνυπάρχουμε<br>
+                με τη μαγεία του δειλινού,<br>
+                με το φύσημα του ανέμου όταν παίρνει τα φύλλα<br>
+                και τα ρίχνει και τα σκορπά,<br>
+                όταν αυτά κιτρινίζουν και σιγά σιγά χάνονται<br>
+                στην άβυσσο της ελπίδας<br>
+                να ξαναγίνουν δέντρα μια μέρα,<br>
+                να ξανάρθει αυτό το απαλό αεράκι να τα πάρει,<br>
+                να πέσουν στο σβέρκο σου σαν περνάς<br>
+                κι ας μην με αγγίξεις.<br>
+                Μόνο να περνάς<br>
+                από τις νότες των τραγουδιών,<br>
+                από τις σταγόνες της βροχής,<br>
+                από τα όνειρά μου.<br>
             </p>
         </div>
         <div class="poem-image">
             <img src="avisos.jpg" alt="Άβυσσος">
         </div>
     </main>
+
+    <button id="likeButton" onclick="toggleLike()">❤️ Μου αρέσει (<span id="likeCount">0</span>)</button>
 
     <section id="comments">
         <h3>Σχόλια</h3>
@@ -147,17 +213,24 @@
         <ul id="commentList"></ul>
     </section>
 
-    <button id="likeButton" onclick="addLike()">❤️ Μου αρέσει (<span id="likeCount">0</span>)</button>
-
     <footer>
         <a href="poems.html" class="back-link">← Επιστροφή στα Ποιήματα</a>
     </footer>
 
     <script>
         let likeCount = 0;
+        let isLiked = false;
 
-        function addLike() {
-            likeCount++;
+        function toggleLike() {
+            const likeButton = document.getElementById('likeButton');
+            if (isLiked) {
+                likeCount--;
+                likeButton.classList.remove('liked');
+            } else {
+                likeCount++;
+                likeButton.classList.add('liked');
+            }
+            isLiked = !isLiked;
             document.getElementById('likeCount').innerText = likeCount;
         }
 
@@ -168,13 +241,30 @@
             if (commentText !== "") {
                 let commentList = document.getElementById('commentList');
                 let newComment = document.createElement('li');
-                newComment.innerText = commentText;
-                commentList.appendChild(newComment);
+
+                let userSpan = document.createElement('span');
+                userSpan.className = 'comment-user';
+                userSpan.innerText = 'Χρήστης';
+
+                let timeSpan = document.createElement('span');
+                timeSpan.className = 'comment-time';
+                timeSpan.innerText = new Date().toLocaleTimeString('el-GR');
+
+                let textSpan = document.createElement('span');
+                textSpan.className = 'comment-text';
+                textSpan.innerText = commentText;
+
+                let headerDiv = document.createElement('div');
+                headerDiv.appendChild(userSpan);
+                headerDiv.appendChild(timeSpan);
+
+                newComment.appendChild(headerDiv);
+                newComment.appendChild(textSpan);
+
+                commentList.insertBefore(newComment, commentList.firstChild);
                 commentBox.value = "";
             }
         }
     </script>
 </body>
 </html>
-
-
