@@ -38,8 +38,8 @@ header {
 
 .hero-image {
     width: 100%;
-    height: auto; /* Αφαίρεση max-height για να φαίνεται ολόκληρη */
-    max-height: 500px; /* Μέγιστο ύψος αλλά όχι μικρότερο από το περιεχόμενο */
+    height: auto; /* Φαίνεται ολόκληρη */
+    max-height: 500px; /* Μέγιστο ύψος */
     object-fit: cover;
 }
 
@@ -49,7 +49,7 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 40px; /* Αυξημένη απόσταση από 20px σε 40px */
+    gap: 40px; /* Αυξημένη απόσταση */
 }
 
 nav ul li {
@@ -196,6 +196,11 @@ main {
     color: #fff;
 }
 
+#subscribe-form h3 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+}
+
 #subscribe-form iframe {
     width: 100%;
     height: 250px;
@@ -238,7 +243,7 @@ main {
 
     nav ul {
         flex-direction: column;
-        gap: 20px; /* Λιγότερη απόσταση στο mobile για να χωράει */
+        gap: 20px;
     }
 
     nav ul li {
