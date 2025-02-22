@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -27,10 +28,11 @@
             margin: 0 auto;
             position: relative;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         .poem {
-            font-size: 22px;
+            font-size: 26px;
             line-height: 1.1;
             text-align: left;
             max-width: 50%;
@@ -38,14 +40,13 @@
         }
 
         .poem-image {
-            position: absolute;
-            top: -20px;
-            right: 0;
-            max-width: none;
+            position: relative;
+            max-width: 50%;
         }
 
         .poem-image img {
-            width: 600px; /
+            width: 100%;
+            max-width: 1000px;
             height: auto;
             border-radius: 100px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
@@ -62,34 +63,102 @@
 
         #comments {
             margin-top: 40px;
-            text-align: center;
+            text-align: left;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         #commentBox {
-            width: 80%;
+            width: 100%;
             max-width: 500px;
             padding: 10px;
             margin-top: 10px;
+            background-color: #333;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 4px;
         }
 
         #commentList {
             list-style: none;
             padding: 0;
+            margin-top: 20px;
+        }
+
+        #commentList li {
+            background-color: #2a2a2a;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comment-user {
+            font-weight: bold;
+            color: #ff8c00;
+            font-size: 14px;
+        }
+
+        .comment-time {
+            color: #888;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .comment-text {
+            margin-top: 5px;
+            font-size: 16px;
         }
 
         #likeButton {
-            background-color: #ff8c00;
+            background-color: transparent;
             color: white;
-            border: none;
-            padding: 10px 20px;
+            border: 1px solid #555;
+            padding: 5px 15px;
             margin-top: 20px;
-            font-size: 18px;
+            font-size: 16px;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
         }
 
         #likeButton:hover {
-            background-color: #e07b00;
+            background-color: #333;
+        }
+
+        #likeButton.liked {
+            color: #ff8c00;
+        }
+
+        #likeCount {
+            margin-left: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .poem, .poem-image {
+                max-width: 100%;
+                padding-right: 0;
+            }
+
+            .poem {
+                font-size: 20px;
+            }
+
+            .poem-image img {
+                border-radius: 50px;
+            }
+
+            #comments, #commentBox {
+                max-width: 90%;
+            }
         }
     </style>
 </head>
@@ -103,52 +172,48 @@
         <div class="poem">
             <p>
                 Σε γέννησε το πάθος μου<br>
-Σε έπλασαν οι κρύες νύχτες του χειμώνα,<br>
-σου έβαλε μιλιά η σιωπή του πλήθους<br>
-την ώρα που ούρλιαζε.<br>
-Σε παραπλάνησε η φαντασία μου.<br>
-<br>
-Σε μέρη ανύπαρκτα σου υποσχέθηκα να σε πάρω.<br>
-<br>
-Για πλώρη βάλαμε, εσύ και εγώ,<br>
-σαν χαμένοι σε έναν κόσμο που είναι ακίνητος<br>
-μα που αλλάζει μορφές.<br>
-<br>
-Σε μια θάλασσα γαλήνια δίχως τέλος,<br>
-κάτω από έναν απέραντο ουρανό<br>
-γεμάτο με άστρα, σε φίλησα.<br>
-Σαν προσκύνημα σε φυλάω μέσα μου,<br>
-σαν φυλακτό που μου το χάρισε η μοναξιά μου.<br>
-<br>
-Πόσο είναι που αγαπώ όταν έρχεται ο Οκτώβρης,<br>
-με όλα του τα χρώματα, με τη γλυκιά του παγωνιά,<br>
-σου αναθερμαίνει τα όνειρα,<br>
-σου καθαρίζει την ψυχή<br>
-από το κάψιμο του καλοκαιριού.<br>
-<br>
-Πόσο είναι που λατρεύω όταν τα φύλλα πέφτουν<br>
-και, δίχως να το θέλω, πέφτω και εγώ μαζί τους,<br>
-κι εκεί ακριβώς που βουλιάζω<br>
-σε βλέπω να κάθεσαι ακριβώς εκεί<br>
-που σκόνταψα όταν ήμουν μικρός,<br>
-σε έναν βράχο της θάλασσας,<br>
-να με περιμένεις δίχως να γερνάς,<br>
-δίχως να αλλάζει η λάμψη στα μάτια σου,<br>
-να κρατάς ένα κομμάτι του Οκτώβρη μέσα μου,<br>
-να μου καθαρίζεις την ψυχή<br>
-για να μην ξεχνώ ποιος είμαι.<br>
-
-
-
-
-
-
+                Σε έπλασαν οι κρύες νύχτες του χειμώνα,<br>
+                σου έβαλε μιλιά η σιωπή του πλήθους<br>
+                την ώρα που ούρλιαζε.<br>
+                Σε παραπλάνησε η φαντασία μου.<br>
+                <br>
+                Σε μέρη ανύπαρκτα σου υποσχέθηκα να σε πάρω.<br>
+                <br>
+                Για πλώρη βάλαμε, εσύ και εγώ,<br>
+                σαν χαμένοι σε έναν κόσμο που είναι ακίνητος<br>
+                μα που αλλάζει μορφές.<br>
+                <br>
+                Σε μια θάλασσα γαλήνια δίχως τέλος,<br>
+                κάτω από έναν απέραντο ουρανό<br>
+                γεμάτο με άστρα, σε φίλησα.<br>
+                Σαν προσκύνημα σε φυλάω μέσα μου,<br>
+                σαν φυλακτό που μου το χάρισε η μοναξιά μου.<br>
+                <br>
+                Πόσο είναι που αγαπώ όταν έρχεται ο Οκτώβρης,<br>
+                με όλα του τα χρώματα, με τη γλυκιά του παγωνιά,<br>
+                σου αναθερμαίνει τα όνειρα,<br>
+                σου καθαρίζει την ψυχή<br>
+                από το κάψιμο του καλοκαιριού.<br>
+                <br>
+                Πόσο είναι που λατρεύω όταν τα φύλλα πέφτουν<br>
+                και, δίχως να το θέλω, πέφτω και εγώ μαζί τους,<br>
+                κι εκεί ακριβώς που βουλιάζω<br>
+                σε βλέπω να κάθεσαι ακριβώς εκεί<br>
+                που σκόνταψα όταν ήμουν μικρός,<br>
+                σε έναν βράχο της θάλασσας,<br>
+                να με περιμένεις δίχως να γερνάς,<br>
+                δίχως να αλλάζει η λάμψη στα μάτια σου,<br>
+                να κρατάς ένα κομμάτι του Οκτώβρη μέσα μου,<br>
+                να μου καθαρίζεις την ψυχή<br>
+                για να μην ξεχνώ ποιος είμαι.<br>
             </p>
         </div>
         <div class="poem-image">
             <img src="poem5image.jpg" alt="Ένα κομμάτι του Οκτώβρη μέσα μου">
         </div>
     </main>
+
+    <button id="likeButton" onclick="toggleLike()">❤️ Μου αρέσει (<span id="likeCount">0</span>)</button>
 
     <section id="comments">
         <h3>Σχόλια</h3>
@@ -157,17 +222,24 @@
         <ul id="commentList"></ul>
     </section>
 
-    <button id="likeButton" onclick="addLike()">❤️ Μου αρέσει (<span id="likeCount">0</span>)</button>
-
     <footer>
         <a href="poems.html" class="back-link">← Επιστροφή στα Ποιήματα</a>
     </footer>
 
     <script>
         let likeCount = 0;
+        let isLiked = false;
 
-        function addLike() {
-            likeCount++;
+        function toggleLike() {
+            const likeButton = document.getElementById('likeButton');
+            if (isLiked) {
+                likeCount--;
+                likeButton.classList.remove('liked');
+            } else {
+                likeCount++;
+                likeButton.classList.add('liked');
+            }
+            isLiked = !isLiked;
             document.getElementById('likeCount').innerText = likeCount;
         }
 
@@ -178,13 +250,31 @@
             if (commentText !== "") {
                 let commentList = document.getElementById('commentList');
                 let newComment = document.createElement('li');
-                newComment.innerText = commentText;
-                commentList.appendChild(newComment);
+
+                let userSpan = document.createElement('span');
+                userSpan.className = 'comment-user';
+                userSpan.innerText = 'Χρήστης';
+
+                let timeSpan = document.createElement('span');
+                timeSpan.className = 'comment-time';
+                timeSpan.innerText = new Date().toLocaleTimeString('el-GR');
+
+                let textSpan = document.createElement('span');
+                textSpan.className = 'comment-text';
+                textSpan.innerText = commentText;
+
+                let headerDiv = document.createElement('div');
+                headerDiv.appendChild(userSpan);
+                headerDiv.appendChild(timeSpan);
+
+                newComment.appendChild(headerDiv);
+                newComment.appendChild(textSpan);
+
+                commentList.insertBefore(newComment, commentList.firstChild);
                 commentBox.value = "";
             }
         }
     </script>
 </body>
 </html>
-
-
+```
