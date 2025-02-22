@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -27,10 +28,11 @@
             margin: 0 auto;
             position: relative;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         .poem {
-            font-size: 22px;
+            font-size: 26px;
             line-height: 1.1;
             text-align: left;
             max-width: 50%;
@@ -38,14 +40,13 @@
         }
 
         .poem-image {
-            position: absolute;
-            top: -20px;
-            right: 0;
-            max-width: none;
+            position: relative;
+            max-width: 50%;
         }
 
         .poem-image img {
-            width: 600px; /
+            width: 100%;
+            max-width: 1000px;
             height: auto;
             border-radius: 100px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
@@ -62,34 +63,102 @@
 
         #comments {
             margin-top: 40px;
-            text-align: center;
+            text-align: left;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         #commentBox {
-            width: 80%;
+            width: 100%;
             max-width: 500px;
             padding: 10px;
             margin-top: 10px;
+            background-color: #333;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 4px;
         }
 
         #commentList {
             list-style: none;
             padding: 0;
+            margin-top: 20px;
+        }
+
+        #commentList li {
+            background-color: #2a2a2a;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comment-user {
+            font-weight: bold;
+            color: #ff8c00;
+            font-size: 14px;
+        }
+
+        .comment-time {
+            color: #888;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .comment-text {
+            margin-top: 5px;
+            font-size: 16px;
         }
 
         #likeButton {
-            background-color: #ff8c00;
+            background-color: transparent;
             color: white;
-            border: none;
-            padding: 10px 20px;
+            border: 1px solid #555;
+            padding: 5px 15px;
             margin-top: 20px;
-            font-size: 18px;
+            font-size: 16px;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
         }
 
         #likeButton:hover {
-            background-color: #e07b00;
+            background-color: #333;
+        }
+
+        #likeButton.liked {
+            color: #ff8c00;
+        }
+
+        #likeCount {
+            margin-left: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .poem, .poem-image {
+                max-width: 100%;
+                padding-right: 0;
+            }
+
+            .poem {
+                font-size: 20px;
+            }
+
+            .poem-image img {
+                border-radius: 50px;
+            }
+
+            #comments, #commentBox {
+                max-width: 90%;
+            }
         }
     </style>
 </head>
@@ -103,33 +172,30 @@
         <div class="poem">
             <p>
                 Γίνομαι το τώρα<br>
-Προσπερνώ τα βουνά, διασχίζω τις θάλασσες,<br>
-αφήνομαι να χυθώ στους αφρούς<br>
-και γίνομαι αέρας.<br>
-Παίρνω βαθιά ανάσα και κάνω βουτιά<br>
-στα όνειρά μου.<br>
-<br>
-Αμελώ τις θύελλες της ψυχής μου,<br>
-τις αφήνω χωρίς φαΐ και νερό,<br>
-κυριαρχώ στις σκέψεις μου,<br>
-αγνοώντας το βουβό τραγούδι της αγωνίας<br>
-για το τι είναι να ’ρθει.<br>
-Δεν νοιάζομαι.<br>
-Αφήνομαι στο τώρα.<br>
-Γίνομαι το τώρα.<br>
-
-
-Ζω
-
-
-
-
+                Προσπερνώ τα βουνά, διασχίζω τις θάλασσες,<br>
+                αφήνομαι να χυθώ στους αφρούς<br>
+                και γίνομαι αέρας.<br>
+                Παίρνω βαθιά ανάσα και κάνω βουτιά<br>
+                στα όνειρά μου.<br>
+                <br>
+                Αμελώ τις θύελλες της ψυχής μου,<br>
+                τις αφήνω χωρίς φαΐ και νερό,<br>
+                κυριαρχώ στις σκέψεις μου,<br>
+                αγνοώντας το βουβό τραγούδι της αγωνίας<br>
+                για το τι είναι να ’ρθει.<br>
+                Δεν νοιάζομαι.<br>
+                Αφήνομαι στο τώρα.<br>
+                Γίνομαι το τώρα.<br>
+                <br>
+                Ζω
             </p>
         </div>
         <div class="poem-image">
             <img src="poem4image.jpg" alt="Γίνομαι το τώρα">
         </div>
     </main>
+
+    <button id="likeButton" onclick="toggleLike()">❤️ Μου αρέσει (<span id="likeCount">0</span>)</button>
 
     <section id="comments">
         <h3>Σχόλια</h3>
@@ -138,17 +204,24 @@
         <ul id="commentList"></ul>
     </section>
 
-    <button id="likeButton" onclick="addLike()">❤️ Μου αρέσει (<span id="likeCount">0</span>)</button>
-
     <footer>
         <a href="poems.html" class="back-link">← Επιστροφή στα Ποιήματα</a>
     </footer>
 
     <script>
         let likeCount = 0;
+        let isLiked = false;
 
-        function addLike() {
-            likeCount++;
+        function toggleLike() {
+            const likeButton = document.getElementById('likeButton');
+            if (isLiked) {
+                likeCount--;
+                likeButton.classList.remove('liked');
+            } else {
+                likeCount++;
+                likeButton.classList.add('liked');
+            }
+            isLiked = !isLiked;
             document.getElementById('likeCount').innerText = likeCount;
         }
 
@@ -159,13 +232,31 @@
             if (commentText !== "") {
                 let commentList = document.getElementById('commentList');
                 let newComment = document.createElement('li');
-                newComment.innerText = commentText;
-                commentList.appendChild(newComment);
+
+                let userSpan = document.createElement('span');
+                userSpan.className = 'comment-user';
+                userSpan.innerText = 'Χρήστης';
+
+                let timeSpan = document.createElement('span');
+                timeSpan.className = 'comment-time';
+                timeSpan.innerText = new Date().toLocaleTimeString('el-GR');
+
+                let textSpan = document.createElement('span');
+                textSpan.className = 'comment-text';
+                textSpan.innerText = commentText;
+
+                let headerDiv = document.createElement('div');
+                headerDiv.appendChild(userSpan);
+                headerDiv.appendChild(timeSpan);
+
+                newComment.appendChild(headerDiv);
+                newComment.appendChild(textSpan);
+
+                commentList.insertBefore(newComment, commentList.firstChild);
                 commentBox.value = "";
             }
         }
     </script>
 </body>
 </html>
-
-
+```
