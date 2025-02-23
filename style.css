@@ -342,4 +342,48 @@ main {
     .commentbox {
         max-width: 90%;
     }
+    /* Στυλ για τη Φόρμα Εγγραφής */
+#subscribe-form {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(191, 87, 0, 0.9); /* Πορτοκαλί φόντο για να ταιριάζει */
+    margin: 10px auto;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+#subscribe-form h3 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+}
+
+#subscribe-form p {
+    font-size: 0.8rem;
+    color: #f4f4f4;
+    margin: 5px 0 10px;
+}
+
+#subscribe-form a {
+    color: #FFD700; /* Χρυσό χρώμα για τον σύνδεσμο */
+    text-decoration: underline;
+}
+
+#subscribe-form iframe {
+    width: 100%;
+    height: 250px;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    #subscribe-form {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    #subscribe-form iframe {
+        height: 300px; /* Λίγο μεγαλύτερο για mobile */
+    }
+}
 }
