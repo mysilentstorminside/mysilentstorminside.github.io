@@ -41,7 +41,7 @@ header {
     height: auto;
     max-height: 500px;
     object-fit: cover;
-    flex-grow: 1; /* Αναπτύσσεται για να γεμίσει τον χώρο */
+    flex-grow: 1;
 }
 
 nav ul {
@@ -151,7 +151,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Σχόλια */
+/* Σχόλια (Παλιό Στυλ - Δεν χρησιμοποιείται πια) */
 #comments {
     max-width: 80%;
     margin: 50px auto;
@@ -183,6 +183,36 @@ main {
     margin: 0 auto;
     text-align: left;
     padding-left: 40px;
+}
+
+/* Στυλ για το CommentBox.io */
+.commentbox {
+    margin-top: 40px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Αλλαγή χρώματος κειμένου σε άσπρο για όλα τα στοιχεία του CommentBox */
+.commentbox, .commentbox * {
+    color: white !important;
+}
+
+/* Αλλαγή χρώματος για το "Comments (X)" */
+.commentbox .cb-header {
+    color: white !important;
+}
+
+/* Αλλαγή φόντου για τα σχόλια */
+.commentbox .cb-comment {
+    background-color: #2a2a2a !important;
+}
+
+/* Αλλαγή στυλ για το input box */
+.commentbox textarea {
+    background-color: #333 !important;
+    color: white !important;
+    border: 1px solid #555 !important;
 }
 
 /* Mobile Styles */
@@ -274,5 +304,9 @@ main {
 
     button {
         width: 100%;
+    }
+
+    .commentbox {
+        max-width: 90%;
     }
 }
