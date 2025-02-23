@@ -5,6 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Η κόρη της βροχής</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            text-align: center;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 80%;
+            margin: 0 auto;
+            position: relative;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .poem {
+            font-size: 26px;
+            line-height: 1.1;
+            text-align: left;
+            max-width: 50%;
+            padding-right: 20px;
+        }
+
+        .poem-image {
+            position: relative;
+            max-width: 50%;
+        }
+
+        .poem-image img {
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            border-radius: 100px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-link {
+            color: #ff8c00;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .commentbox {
+            margin-top: 40px;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* CSS με υψηλή ειδικότητα για το CommentBox */
+        div.commentbox * {
+            color: white !important;
+        }
+
+        div.commentbox .cb-header {
+            color: white !important;
+        }
+
+        div.commentbox .cb-comment {
+            background-color: #2a2a2a !important;
+            color: white !important;
+        }
+
+        div.commentbox textarea {
+            background-color: #333 !important;
+            color: white !important;
+            border: 1px solid #555 !important;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .poem, .poem-image {
+                max-width: 100%;
+                padding-right: 0;
+            }
+
+            .poem {
+                font-size: 20px;
+            }
+
+            .poem-image img {
+                border-radius: 50px;
+            }
+
+            .commentbox {
+                max-width: 90%;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -63,7 +169,40 @@
 
     <div class="commentbox"></div>
     <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-    <script>commentBox('5766691048914944-proj')</script>
+    <script>
+        commentBox('5766691048914944-proj');
+
+        // JavaScript για να αλλάξουμε τα χρώματα μετά τη φόρτωση
+        window.onload = function() {
+            // Περιμένουμε λίγο για να φορτώσει το CommentBox
+            setTimeout(() => {
+                // Επιλογή όλων των στοιχείων μέσα στο commentbox
+                const commentBoxElements = document.querySelectorAll('.commentbox, .commentbox *');
+                commentBoxElements.forEach(element => {
+                    element.style.color = 'white';
+                });
+
+                // Ειδική στόχευση του "Comments (X)"
+                const header = document.querySelector('.commentbox .cb-header');
+                if (header) header.style.color = 'white';
+
+                // Ειδική στόχευση των σχολίων
+                const comments = document.querySelectorAll('.commentbox .cb-comment');
+                comments.forEach(comment => {
+                    comment.style.backgroundColor = '#2a2a2a';
+                    comment.style.color = 'white';
+                });
+
+                // Ειδική στόχευση του textarea
+                const textarea = document.querySelector('.commentbox textarea');
+                if (textarea) {
+                    textarea.style.backgroundColor = '#333';
+                    textarea.style.color = 'white';
+                    textarea.style.border = '1px solid #555';
+                }
+            }, 1000); // 1 δευτερόλεπτο καθυστέρηση για να φορτώσει το CommentBox
+        };
+    </script>
 
     <footer>
         <a href="poems.html" class="back-link">← Επιστροφή στα Ποιήματα</a>
