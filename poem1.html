@@ -67,6 +67,30 @@
             margin-right: auto;
         }
 
+        /* CSS για το CommentBox.io */
+        div.commentbox {
+            background-color: #808080 !important; /* Γκρι φόντο για όλο το CommentBox */
+        }
+
+        div.commentbox * {
+            color: white !important; /* Όλα τα κείμενα άσπρα */
+        }
+
+        div.commentbox .cb-header {
+            color: white !important; /* "Comments (X)" άσπρο */
+        }
+
+        div.commentbox .cb-comment {
+            background-color: #2a2a2a !important; /* Σκούρο γκρι για τα μεμονωμένα σχόλια */
+            color: white !important;
+        }
+
+        div.commentbox textarea {
+            background-color: #333 !important; /* Σκούρο γκρι για το textarea */
+            color: white !important;
+            border: 1px solid #555 !important;
+        }
+
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -150,50 +174,47 @@
     <div class="commentbox"></div>
     <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
     <script>
-        commentBox('5766691048914944-proj', {
-            custom_css: `
-                .commentbox-container {
-                    background-color: #2a2a2a;
-                    border-radius: 10px;
-                    padding: 20px;
-                    color: white;
+        commentBox('5766691048914944-proj');
+
+        // JavaScript για να αλλάξουμε τα χρώματα μετά τη φόρτωση
+        window.onload = function() {
+            setTimeout(() => {
+                // Αλλαγή background του CommentBox
+                const commentBoxContainer = document.querySelector('.commentbox');
+                if (commentBoxContainer) {
+                    commentBoxContainer.style.backgroundColor = '#808080'; // Γκρι φόντο
                 }
-                .cb-header {
-                    color: white !important;
-                }
-                .cb-comment {
-                    background-color: #333 !important;
-                    color: white !important;
-                    border-radius: 5px;
-                    padding: 15px;
-                    margin-bottom: 10px;
-                }
-                .cb-comment-author {
-                    color: #ff8c00 !important;
-                }
-                .cb-comment-date {
-                    color: #ccc !important;
-                }
-                .cb-comment-text {
-                    color: white !important;
-                }
-                textarea {
-                    background-color: #333 !important;
-                    color: white !important;
-                    border: 1px solid #555 !important;
-                }
-                .cb-button {
-                    background-color: #ff8c00 !important;
-                    color: white !important;
-                    border: none !important;
-                    border-radius: 5px !important;
-                    padding: 10px 20px !important;
-                }
-                .cb-button:hover {
-                    background-color: #e67e00 !important;
-                }
-            `
-        });
+
+                // Επιλογή όλων των στοιχείων μέσα στο commentbox
+                const commentBoxElements = document.querySelectorAll('.commentbox *');
+                commentBoxElements.forEach(element => {
+                    element.style.color = 'white'; // Όλα τα κείμενα άσπρα
+                });
+
+                // Ειδική στόχευση του "Comments (X)"
+                const header = document.querySelector('.commentbox .cb-header');
+                if (header) header.style.color = 'white';
+
+                // Ειδική στόχευση των σχολίων
+                const comments = document.querySelectorAll('.commentbox .cb-comment');
+                comments.forEach(comment => {
+                    comment.style.backgroundColor = '#2a2a2a'; // Σκούρο γκρι για σχόλια
+                    comment.style.color = 'white';
+                });
+
+                // Ειδική στόχευση του textarea
+                const textarea = document.querySelector('.commentbox textarea');
+                if (textarea) {
+                    textarea.style.backgroundColor = '#333';
+                    textarea.style.color = 'white';
+                    textarea.style.border = '1px solid #555';
+                };
+
+                // Ειδική στόχευση του wrapper (για το γενικό φόντο)
+                const wrapper = document.querySelector('.commentbox .cb-wrapper');
+                if (wrapper) wrapper.style.backgroundColor = '#808080';
+            }, 1500); // Αυξήσαμε σε 1.5 δευτερόλεπτα για να φορτώσει πλήρως
+        };
     </script>
 
     <footer>
