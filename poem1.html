@@ -67,6 +67,23 @@
             margin-right: auto;
         }
 
+        /* Αλλαγή χρώματος κειμένου στο CommentBox.io σε άσπρο */
+        .commentbox * {
+            color: white !important;
+        }
+
+        /* Προαιρετικό: Αλλαγή χρώματος φόντου στα σχόλια */
+        .commentbox .cb-comment {
+            background-color: #2a2a2a;
+        }
+
+        /* Προαιρετικό: Αλλαγή χρώματος για το input box */
+        .commentbox textarea {
+            background-color: #333;
+            color: white;
+            border: 1px solid #555;
+        }
+
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
