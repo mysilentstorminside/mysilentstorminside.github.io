@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -61,80 +60,35 @@
             text-decoration: underline;
         }
 
-        #comments {
+        .commentbox {
             margin-top: 40px;
-            text-align: left;
             max-width: 80%;
             margin-left: auto;
             margin-right: auto;
         }
 
-        #commentBox {
-            width: 100%;
-            max-width: 500px;
-            padding: 10px;
-            margin-top: 10px;
-            background-color: #333;
-            color: white;
-            border: 1px solid #555;
-            border-radius: 4px;
+        /* CSS για το CommentBox.io */
+        div.commentbox {
+            background-color: #808080 !important; /* Γκρι φόντο για όλο το CommentBox */
         }
 
-        #commentList {
-            list-style: none;
-            padding: 0;
-            margin-top: 20px;
+        div.commentbox * {
+            color: white !important; /* Όλα τα κείμενα άσπρα */
         }
 
-        #commentList li {
-            background-color: #2a2a2a;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            display: flex;
-            flex-direction: column;
+        div.commentbox .cb-header {
+            color: white !important; /* "Comments (X)" άσπρο */
         }
 
-        .comment-user {
-            font-weight: bold;
-            color: #ff8c00;
-            font-size: 14px;
+        div.commentbox .cb-comment {
+            background-color: #2a2a2a !important; /* Σκούρο γκρι για τα μεμονωμένα σχόλια */
+            color: white !important;
         }
 
-        .comment-time {
-            color: #888;
-            font-size: 12px;
-            margin-left: 10px;
-        }
-
-        .comment-text {
-            margin-top: 5px;
-            font-size: 16px;
-        }
-
-        #likeButton {
-            background-color: transparent;
-            color: white;
-            border: 1px solid #555;
-            padding: 5px 15px;
-            margin-top: 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        #likeButton:hover {
-            background-color: #333;
-        }
-
-        #likeButton.liked {
-            color: #ff8c00;
-        }
-
-        #likeCount {
-            margin-left: 5px;
+        div.commentbox textarea {
+            background-color: #333 !important; /* Σκούρο γκρι για το textarea */
+            color: white !important;
+            border: 1px solid #555 !important;
         }
 
         @media (max-width: 768px) {
@@ -156,7 +110,7 @@
                 border-radius: 50px;
             }
 
-            #comments, #commentBox {
+            .commentbox {
                 max-width: 90%;
             }
         }
@@ -195,66 +149,54 @@
         </div>
     </main>
 
-    <section id="comments">
-        <h3>Σχόλια</h3>
-        <textarea id="commentBox" placeholder="Γράψε ένα σχόλιο..."></textarea>
-        <button onclick="addComment()">Υποβολή</button>
-        <ul id="commentList"></ul>
-    </section>
+    <div class="commentbox"></div>
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>
+        commentBox('5766691048914944-proj');
+
+        // JavaScript για να αλλάξουμε τα χρώματα μετά τη φόρτωση
+        window.onload = function() {
+            setTimeout(() => {
+                // Αλλαγή background του CommentBox
+                const commentBoxContainer = document.querySelector('.commentbox');
+                if (commentBoxContainer) {
+                    commentBoxContainer.style.backgroundColor = '#808080'; // Γκρι φόντο
+                }
+
+                // Επιλογή όλων των στοιχείων μέσα στο commentbox
+                const commentBoxElements = document.querySelectorAll('.commentbox *');
+                commentBoxElements.forEach(element => {
+                    element.style.color = 'white'; // Όλα τα κείμενα άσπρα
+                });
+
+                // Ειδική στόχευση του "Comments (X)"
+                const header = document.querySelector('.commentbox .cb-header');
+                if (header) header.style.color = 'white';
+
+                // Ειδική στόχευση των σχολίων
+                const comments = document.querySelectorAll('.commentbox .cb-comment');
+                comments.forEach(comment => {
+                    comment.style.backgroundColor = '#2a2a2a'; // Σκούρο γκρι για σχόλια
+                    comment.style.color = 'white';
+                });
+
+                // Ειδική στόχευση του textarea
+                const textarea = document.querySelector('.commentbox textarea');
+                if (textarea) {
+                    textarea.style.backgroundColor = '#333';
+                    textarea.style.color = 'white';
+                    textarea.style.border = '1px solid #555';
+                };
+
+                // Ειδική στόχευση του wrapper (για το γενικό φόντο)
+                const wrapper = document.querySelector('.commentbox .cb-wrapper');
+                if (wrapper) wrapper.style.backgroundColor = '#808080';
+            }, 1500); // Αυξήσαμε σε 1.5 δευτερόλεπτα για να φορτώσει πλήρως
+        };
+    </script>
 
     <footer>
         <a href="poems.html" class="back-link">← Επιστροφή στα Ποιήματα</a>
     </footer>
-
-    <script>
-        let likeCount = 0;
-        let isLiked = false;
-
-        function toggleLike() {
-            const likeButton = document.getElementById('likeButton');
-            if (isLiked) {
-                likeCount--;
-                likeButton.classList.remove('liked');
-            } else {
-                likeCount++;
-                likeButton.classList.add('liked');
-            }
-            isLiked = !isLiked;
-            document.getElementById('likeCount').innerText = likeCount;
-        }
-
-        function addComment() {
-            let commentBox = document.getElementById('commentBox');
-            let commentText = commentBox.value.trim();
-
-            if (commentText !== "") {
-                let commentList = document.getElementById('commentList');
-                let newComment = document.createElement('li');
-
-                let userSpan = document.createElement('span');
-                userSpan.className = 'comment-user';
-                userSpan.innerText = 'Χρήστης';
-
-                let timeSpan = document.createElement('span');
-                timeSpan.className = 'comment-time';
-                timeSpan.innerText = new Date().toLocaleTimeString('el-GR');
-
-                let textSpan = document.createElement('span');
-                textSpan.className = 'comment-text';
-                textSpan.innerText = commentText;
-
-                let headerDiv = document.createElement('div');
-                headerDiv.appendChild(userSpan);
-                headerDiv.appendChild(timeSpan);
-
-                newComment.appendChild(headerDiv);
-                newComment.appendChild(textSpan);
-
-                commentList.insertBefore(newComment, commentList.firstChild);
-                commentBox.value = "";
-            }
-        }
-    </script>
 </body>
 </html>
-```
