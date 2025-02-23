@@ -1,6 +1,7 @@
 /* Στυλ για το blog "Σιωπηλή Καταιγίδα" */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap');
 
+/* Βασικά στυλ */
 body {
     background-color: #1a1a1a;
     color: white;
@@ -206,6 +207,25 @@ main {
 /* Αλλαγή φόντου για τα σχόλια */
 .commentbox .cb-comment {
     background-color: #2a2a2a !important;
+    color: white !important;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+/* Αλλαγή χρώματος για το όνομα του χρήστη */
+.commentbox .cb-comment-author {
+    color: #ff8c00 !important;
+}
+
+/* Αλλαγή χρώματος για την ημερομηνία */
+.commentbox .cb-comment-date {
+    color: #ccc !important;
+}
+
+/* Αλλαγή χρώματος για το κείμενο του σχολίου */
+.commentbox .cb-comment-text {
+    color: white !important;
 }
 
 /* Αλλαγή στυλ για το input box */
@@ -213,6 +233,19 @@ main {
     background-color: #333 !important;
     color: white !important;
     border: 1px solid #555 !important;
+}
+
+/* Αλλαγή στυλ για τα κουμπιά */
+.commentbox .cb-button {
+    background-color: #ff8c00 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 5px !important;
+    padding: 10px 20px !important;
+}
+
+.commentbox .cb-button:hover {
+    background-color: #e67e00 !important;
 }
 
 /* Mobile Styles */
