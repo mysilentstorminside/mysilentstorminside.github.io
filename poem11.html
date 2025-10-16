@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Τα σοκάκια των ονείρων μου</title>
+  <!-- Αν ΔΕΝ έχεις εξωτερικό style.css, μπορείς να αφαιρέσεις την επόμενη γραμμή -->
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      text-align: center;
+      background-color: #1a1a1a;
+      color: #fff;
+      font-family: "Cormorant Garamond", serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      margin-top: 20px;
+      padding: 0 16px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 24px;
+      max-width: 1100px;
+      margin: 30px auto 0;
+      padding: 0 16px;
+      position: relative;
+    }
+
+    .poem {
+      font-size: 22px;
+      line-height: 1.35;
+      text-align: left;
+      max-width: 600px;
+    }
+
+    .poem-image {
+      position: relative; /* όχι absolute ώστε να ‘ρέει’ σωστά σε μικρές οθόνες */
+      flex: 0 0 auto;
+    }
+
+    .poem-image img {
+      width: 600px; /* διορθώθηκε: αφαιρέθηκε το τυχαίο "/" */
+      max-width: 100%;
+      height: auto;
+      border-radius: 24px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      display: block;
+    }
+
+    .back-link {
+      color: #ff8c00;
+      text-decoration: none;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    #comments {
+      margin-top: 40px;
+      text-align: center;
+      padding: 0 16px 40px;
+    }
+
+    #commentBox {
+      width: 100%;
+      max-width: 500px;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #333;
+      background: #111;
+      color: #fff;
+    }
+
+    #commentList {
+      list-style: none;
+      padding: 0;
+      margin: 16px auto 0;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    #commentList li {
+      background: #111;
+      border: 1px solid #333;
+      padding: 10px 12px;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
+    #likeButton {
+      background-color: #ff8c00;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 20px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    #likeButton:hover { background-color: #e07b00; }
+
+    footer {
+      margin: 40px 0;
+      padding: 0 16px;
+    }
+
+    /* Απόκριση για κινητά */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .poem {
+        max-width: 100%;
+        font-size: 20px;
+      }
+      .poem-image img {
+        width: 100%;
+        border-radius: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Τα σοκάκια των ονείρων μου</h1>
+    <a href="poems.html" class="back-link">← Επιστροφή στα Ποιήματα</a>
+  </header>
+
+  <main class="container">
+    <article class="poem" aria-label="Ποίημα">
+      <p>
+        Φοβάμαι τα βράδια μη χαθώ<br>
+        Στα σοκάκια των ονείρων μου<br>
+        Τρομάζω απ’ τις σκιές που αφήνουν οι σκέψεις μου<br>
+        Σαν μόνιμα γκραφίτι στους αόρατους μου τοίχους<br>
+        Πονάω όταν αντικρίζω βωβούς τους αριθμούς στο κινητό<br>
+        Ανθρώπων που τόσο έχω αγαπήσει<br>
+        Κυνηγημένος απ’ τις αιώνιες στιγμές που ζήσαμε<br>
+        Ή θα ζούσαμε …<br>
+        Του μυαλού μου.<br><br>
+        Αιωρούνται πάνω απ’ τις τύψεις μου<br>
+        Και γυρνώ σε υποθετικά μέρη<br>
+        Για μια τελευταία ματιά<br>
+        Για ακόμη μια κουβέντα<br>
+        Μα πάντοτε να τρομάζω μην χαθώ<br>
+        Στα σοκάκια των ονείρων μου.
+      </p>
+    </article>
+
+    <div class="poem-image">
+      <img src="poem11image.jpg" alt="Φωτογραφία για το ποίημα Τα σοκάκια των ονείρων μου" />
+    </div>
+  </main>
+
+  <section id="comments">
+    <h3>Σχόλια</h3>
+    <textarea id="commentBox" placeholder="Γράψε ένα σχόλιο..." aria-label="Πεδίο σχολίου"></textarea>
+    <button type="button" onclick="addComment()">Υποβολή</button>
+    <ul id="commentList"></ul>
+  </section>
+
+  <button id="likeButton" type="button" onclick="addLike()">❤️ Μου αρέσει (<span id="likeCount">0</span>)</button>
+
+  <footer>
+    <a href="poems.html" class="back-link">← Επιστροφή στα Ποιήματα</a>
+  </footer>
+
+  <script>
+    let likeCount = 0;
+
+    function addLike() {
+      likeCount++;
+      document.getElementById("likeCount").innerText = likeCount;
+    }
+
+    function addComment() {
+      const commentBox = document.getElementById("commentBox");
+      const commentText = commentBox.value.trim();
+      if (commentText !== "") {
+        const commentList = document.getElementById("commentList");
+        const newComment = document.createElement("li");
+        newComment.innerText = commentText; // ασφαλές (όχι innerHTML)
+        commentList.appendChild(newComment);
+        commentBox.value = "";
+      }
+    }
+  </script>
+</body>
+</html>
